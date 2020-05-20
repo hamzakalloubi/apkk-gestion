@@ -57,11 +57,27 @@
                 </div>
                 <nav class="navbar-sidebar2">
                     <ul class="list-unstyled navbar__list">
-                        <li class="active has-sub">
-                            
-                                <a href="FormRet">
-                                    <i class="fab fa-wpforms"></i>Formulaire</a>
-                        </li>
+
+                        
+                            <li class="active has-sub">
+                                <a class="js-arrow" href="#">
+                                    <i class="fab fa-wpforms"></i>Formulaire
+                                    <span class="arrow">
+                                        <i class="fas fa-angle-down"></i>
+                                    </span>
+                                </a>
+                                <ul class="list-unstyled navbar__sub-list js-sub-list">
+                                    <li>
+                                        <a href="FormRet">
+                                            <i class="fab fa-wpforms"></i>Retrait </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            <i class="fab fa-wpforms"></i>Remise</a>
+                                    </li>
+                                </ul>
+                                
+
 
                         <li class="active has-sub">
                             

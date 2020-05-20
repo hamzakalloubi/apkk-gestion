@@ -16,12 +16,15 @@
 
  <!-- MAIN CONTENT-->
 
-      <div  class="container-fluid" style="padding-top: 110px">
+      <div  class="container-fluid" style="padding-top: 90px">
           <div  class="row justify-content-center">
               <div class="col-sm-8 ">
+
+
+
                   <div class="card">
                       <div class="card-header">Formulaire</div>
-                      <div class="card-body">
+                      <div class="card-body" style="padding-bottom: 0;">
                           <div class="card-title">
                               <h3 class="text-center title-2">Demande de retrait</h3>
                           </div>
@@ -78,27 +81,40 @@
                                       <input style="margin-left: 1px; " type="datetime" class="form-control" id="" placeholder="date">
                                       <small id="" class="form-text text-muted"></small>
                                       </div>
+
                                   </div>
                               </div>
 
 
-                              <div class="row">
-                                  <div class="col-6">
-                                    <button id="Retrait temporaire" type="submit" class="btn btn-lg btn-success btn-block">
-                                      <i class="fas fa-stopwatch"></i>&nbsp;
-                                      <span id="payment-button-amount">Retrait temporaire</span>
-                                      <span id="payment-button-sending" style="display:none;">Sending…</span>
-                                  </button>
-                                  </div>
-                                  <div class="col-6">
-                                    <button id="Retrait final" type="submit" class="btn btn-lg btn-dark btn-block">
-                                      <i class="fas fa-ban"></i>&nbsp;
-                                      <span id="payment-button-amount">Retrait final</span>
-                                      <span id="payment-button-sending" style="display:none;">Sending…</span>
-                                  </button>
-                                  </div>
+                             
+                              <div class="form-group">
+                                <div class="col-9">
+          
+                                <div class="radio"  >
+                                  <label>
+                                    <input class="flat" type="radio" name="type retrait" id="Retrait temporaire" value="Retrait temporaire" checked>Retrait temporaire
+                                  </label>
+                                </div>
+                                <div class="radio" style="display: inline-block;">
+                                  <label>
+                                    <input class="flat" type="radio" name="type retrait" id="Retrait final" value="Retrait final">Retrait final
+                                  </label>
+                                </div>
+                                <div class="radio">
 
+                                  
+                                  
+                                </div>
                               </div>
+                              </div>
+
+                              
+
+
+                              
+                              
+                              
+
 
 
                               <div style="margin-top: 2px;">
