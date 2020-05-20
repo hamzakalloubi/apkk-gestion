@@ -14,14 +14,18 @@ class CreateRetraitsTable extends Migration
     public function up()
     {
         Schema::create('retraits', function (Blueprint $table) {
-            $table->bigIncrements('idretrait');
+            $table->increments('id');
             $table->date('dateretrait');
             $table->string('situationretrait');
             $table->date('dateretour');
-            $table->integer('idtyperetrait');
-            $table->foreign('idtyperetrait')
+            $table->integer('typeretrait_id')->unsigned();
+
+        });
+
+        Schema::table('retraits', function($table) {
+            $table->foreign('typeretrait_id')
             ->references('id')
-            ->on('typeretrait');
+            ->on('typeretraits');
         });
     }
 

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTypesDemandesTable extends Migration
+class CreateDiplomesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,16 @@ class CreateTypesDemandesTable extends Migration
      */
     public function up()
     {
-        Schema::create('typesdemande', function (Blueprint $table) {
+        Schema::create('diplomes', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->string('Libeletypedemande');
+            $table->string('Libeletypediplome'); // licence deug master
+            $table->string('typediplome'); // specialise , recherche
+            $table->string('filiere'); // eco , droit
+
+
         });
     }
-
-
     /**
      * Reverse the migrations.
      *
@@ -28,7 +30,6 @@ class CreateTypesDemandesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('typesdemande');
+        Schema::dropIfExists('diplomes');
     }
 }
-

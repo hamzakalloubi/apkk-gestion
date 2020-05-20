@@ -14,7 +14,8 @@ class CreateDocumentsTable extends Migration
     public function up()
     {
         Schema::create('documents', function (Blueprint $table) {
-            $table->bigIncrements('iddocument');
+            $table->increments('id');
+            $table->timestamps();
             $table->integer('CNEétudiant');
             $table->integer('CINétudiant');
             $table->string('Nométudiant');

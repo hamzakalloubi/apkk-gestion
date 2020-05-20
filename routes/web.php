@@ -24,3 +24,11 @@ Route::get('/FormRet', function () {
 Route::get('/template', function () {
     return view('index');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
