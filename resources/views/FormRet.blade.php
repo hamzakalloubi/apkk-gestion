@@ -15,11 +15,10 @@
        
 
  <!-- MAIN CONTENT-->
- <div class="main-content">
-  <div class="section__content section__content--p30">
-      <div  class="container-fluid">
-          <div  class="row">
-              <div class="col-lg-6">
+
+      <div  class="container-fluid" style="padding-top: 110px">
+          <div  class="row justify-content-center">
+              <div class="col-sm-8 ">
                   <div class="card">
                       <div class="card-header">Formulaire</div>
                       <div class="card-body">
@@ -111,8 +110,7 @@
                               </div>
                           </form>
                       </div>
-                  </div>
-              </div>
+                
     
 
     
