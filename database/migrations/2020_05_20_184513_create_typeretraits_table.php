@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTypesUtilisateurTable extends Migration
+class CreateTyperetraitsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,14 @@ class CreateTypesUtilisateurTable extends Migration
      */
     public function up()
     {
-        Schema::create('types_utilisateur', function (Blueprint $table) {
-            $table->bigIncrements('idtypeutilisateur');
-            $table->string('Libeletypeutilisateur');
+        Schema::create('typeretraits', function (Blueprint $table) {
+            $table->increments('id');
+            $table->timestamps();
+            $table->string('libeleTypeRetrait');
+
+
         });
     }
-
 
     /**
      * Reverse the migrations.
@@ -27,6 +29,6 @@ class CreateTypesUtilisateurTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('types_utilisateur');
+        Schema::dropIfExists('typeretraits');
     }
 }
