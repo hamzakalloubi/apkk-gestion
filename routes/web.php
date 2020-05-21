@@ -21,14 +21,6 @@ Route::get('/FormRet', function () {
     return view('FormRet');
 });
 
-Route::get('/template', function () {
-    return view('index');
+Route::get('/layout', function () {
+    return view('layout');
 });
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

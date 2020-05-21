@@ -82,20 +82,20 @@
                         <li class="active has-sub">
                             
                             <a href="FormRet">
-                                <i class="fab fa-wpforms"></i>Les demandes prets</a>
+                                <i class="fas fa-check-square"></i>Les demandes prets</a>
                         
                     </li>
                         
                     <li class="active has-sub">
                             
                         <a href="FormRet">
-                            <i class="fab fa-wpforms"></i>Les demandes en cour de traitement</a>
+                            <i class="fas fa-sync"></i>Les demandes en cour de traitement</a>
                 </li>
 
                 <li class="active has-sub">
                             
                     <a href="FormRet">
-                        <i class="fab fa-wpforms"></i>Les demandes refusés</a>
+                        <i class="far fa-times-circle"></i>Les demandes refusés</a>
             </li>
                     </ul>
                 </nav>

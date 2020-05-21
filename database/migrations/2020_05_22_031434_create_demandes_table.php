@@ -20,23 +20,23 @@ class CreateDemandesTable extends Migration
 
 
 
-            $table->integer('typedemande_id')->unsigned();;
+            $table->integer('typedemande_id')->unsigned();
             $table->foreign('typedemande_id')
             ->references('id')
             ->on('typesdemande');
 
-            $table->integer('document_id')->unsigned();;
+            $table->integer('document_id')->unsigned();
             $table->foreign('document_id')
             ->references('id')
             ->on('documents');
 
-            $table->integer('diplome_id')->unsigned();;
+            $table->integer('diplome_id')->unsigned();
             $table->foreign('diplome_id')
             ->references('id')
             ->on('diplomes');
 
-            $table->integer('users_id')->unsigned();;
-            $table->foreign('users_id')
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')
             ->references('id')
             ->on('users');
 
