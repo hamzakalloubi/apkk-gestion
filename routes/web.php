@@ -21,6 +21,10 @@ Route::get('/FormRet', function () {
     return view('FormRet');
 });
 
-Route::get('/layout', function () {
-    return view('layout');
+Route::get('/index', function () {
+    return view('index');
 });
+
+Route::resource('/demandes', 'DemandeController')
+       ->only(['index', 'show', 'create', 'store']);
+

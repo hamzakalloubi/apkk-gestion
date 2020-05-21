@@ -17,6 +17,12 @@ class CreateDemandesTable extends Migration
             $table->increments('id');
             $table->date('datedemande');
             $table->string('situation');
+            $table->string('Nom');
+            $table->string('Prénom');
+            $table->string('CNE');
+            $table->string('Apogée');
+            $table->date('Année_scolarité');
+
 
 
 

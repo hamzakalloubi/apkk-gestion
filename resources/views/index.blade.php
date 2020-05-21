@@ -44,13 +44,13 @@
         <aside class="menu-sidebar2" data-background-color="brown" >
             <div class="logo">
                 <a href="#">
-                    <img  src="icons/tetouan.png" alt="fp-tetouan" />
+                    <img  style="border-radius: 5px;" src="/icons/fp-tetouan.png" alt="fp-tetouan" />
                 </a>
             </div>
             <div class="menu-sidebar2__content js-scrollbar1">
                 <div class="account2">
                     <div class="image img-cir img-120">
-                        <img src="images/icon/fp.jpg" alt="fsjeste" />
+                        <img src="/images/icon/fp.jpg" alt="fsjeste" />
                     </div>
                     <h4 class="name">fsjeste</h4>
                     <a href="#">Déconnexion</a>
@@ -58,7 +58,7 @@
                 <nav class="navbar-sidebar2">
                     <ul class="list-unstyled navbar__list">
 
-                        
+
                             <li class="active has-sub">
                                 <a class="js-arrow" href="#">
                                     <i class="fab fa-wpforms"></i>Formulaire
@@ -68,7 +68,7 @@
                                 </a>
                                 <ul class="list-unstyled navbar__sub-list js-sub-list">
                                     <li>
-                                        <a href="FormRet">
+                                        <a href="{{ route('demandes.create') }}">
                                             <i class="fab fa-wpforms"></i>Retrait </a>
                                     </li>
                                     <li>
@@ -76,24 +76,24 @@
                                             <i class="fab fa-wpforms"></i>Remise</a>
                                     </li>
                                 </ul>
-                                
+
 
 
                         <li class="active has-sub">
-                            
+
                             <a href="FormRet">
                                 <i class="fas fa-check-square"></i>Les demandes prets</a>
-                        
+
                     </li>
-                        
+
                     <li class="active has-sub">
-                            
+
                         <a href="FormRet">
                             <i class="fas fa-sync"></i>Les demandes en cour de traitement</a>
                 </li>
 
                 <li class="active has-sub">
-                            
+
                     <a href="FormRet">
                         <i class="far fa-times-circle"></i>Les demandes refusés</a>
             </li>
@@ -366,16 +366,16 @@
             </aside>
             <!-- END HEADER DESKTOP-->
 
-            
 
-            
+
+
             <!-- Formulaire -->
 
          <div >
                                 <!-- RECENT REPORT 2-->
                                 @yield('content')
-                                
-         </div>                     
+
+         </div>
 
     </div>
 
