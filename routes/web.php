@@ -25,6 +25,9 @@ Route::get('/index', function () {
     return view('index');
 });
 
-Route::resource('/demandes', 'DemandeController')
+Route::resource('/retraits', 'DemandeController')
+       ->only(['index', 'show', 'create', 'store']);
+
+Route::resource('/remises', 'RemiseController')
        ->only(['index', 'show', 'create', 'store']);
 

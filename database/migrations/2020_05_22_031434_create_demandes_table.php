@@ -15,18 +15,19 @@ class CreateDemandesTable extends Migration
     {
         Schema::create('demandes', function (Blueprint $table) {
             $table->increments('id');
-            $table->date('datedemande');
-            $table->string('situation');
+            $table->timestamps();
+            $table->date('datedemande')->nullable();
             $table->string('Nom');
             $table->string('Prénom');
             $table->string('CNE');
             $table->string('Apogée');
-            $table->date('Année_scolarité');
+            $table->string('Année_scolarité');
+            $table->string('situation')->default('en cours')->nullable();
 
 
 
 
-            $table->integer('typedemande_id')->unsigned();
+          /*  $table->integer('typedemande_id')->unsigned();
             $table->foreign('typedemande_id')
             ->references('id')
             ->on('typesdemande');
@@ -44,7 +45,7 @@ class CreateDemandesTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')
             ->references('id')
-            ->on('users');
+            ->on('users');*/
 
         });
     }

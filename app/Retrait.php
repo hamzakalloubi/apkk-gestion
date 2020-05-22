@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Demande extends Model
+class Retrait extends Model
 {
-    public $timestamps = true;
+    //
 }

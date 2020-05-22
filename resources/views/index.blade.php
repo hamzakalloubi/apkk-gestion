@@ -44,7 +44,7 @@
         <aside class="menu-sidebar2" data-background-color="brown" >
             <div class="logo">
                 <a href="#">
-                    <img  style="border-radius: 5px;" src="/icons/fp-tetouan.png" alt="fp-tetouan" />
+                    <img  style="" src="/icons/fp-tetouan.png" alt="fp-tetouan" />
                 </a>
             </div>
             <div class="menu-sidebar2__content js-scrollbar1">
@@ -68,11 +68,11 @@
                                 </a>
                                 <ul class="list-unstyled navbar__sub-list js-sub-list">
                                     <li>
-                                        <a href="{{ route('demandes.create') }}">
+                                        <a href="{{ route('retraits.create') }}">
                                             <i class="fab fa-wpforms"></i>Retrait </a>
                                     </li>
                                     <li>
-                                        <a href="">
+                                        <a href="{{ route('remises.create') }}">
                                             <i class="fab fa-wpforms"></i>Remise</a>
                                     </li>
                                 </ul>
