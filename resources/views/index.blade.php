@@ -10,7 +10,7 @@
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Dashboard 2</title>
+    <title>Gestion</title>
 
     <!-- Fontfaces CSS-->
     <link href="/css1/font-face.css" rel="stylesheet" media="all"/>
@@ -35,6 +35,7 @@
 
     <!-- Main CSS-->
     <link href="/css1/theme.css" rel="stylesheet" media="all"/>
+    <link rel="shortcut icon" href="/icons/schedule.png" />
 
 </head>
 
@@ -88,7 +89,7 @@
 
                     <li class="active has-sub">
 
-                        <a href="FormRet">
+                        <a href="tableRemise">
                             <i class="fas fa-sync"></i>Les demandes en cour de traitement</a>
                 </li>
 

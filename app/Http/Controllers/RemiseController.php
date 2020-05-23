@@ -53,7 +53,10 @@ class RemiseController extends Controller
 
             
         $remise = new Remise();
-
+        $remise->Nom = $request->input('Nom');
+        $remise->Prénom = $request->input('Prénom');
+        $remise->CNE = $request->input('CNE');
+        $remise->Apogée = $request->input('Apogée');
         $remise->dateremise = $request->input('dateremise');
         $remise->situationremise = $request->input('situationremise');
         $remise->demande_id=$demande->id;

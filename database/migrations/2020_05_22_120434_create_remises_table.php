@@ -19,7 +19,10 @@ class CreateRemisesTable extends Migration
             $table->date('dateremise')->nullable();
             $table->string('situationremise')->default('en cours')->nullable();
             $table->date('dateretour')->nullable();
-            
+            $table->string('Nom');
+            $table->string('Prénom');
+            $table->string('CNE');
+            $table->string('Apogée');
             $table->integer('demande_id')->unsigned();
 
             $table->foreign('demande_id')

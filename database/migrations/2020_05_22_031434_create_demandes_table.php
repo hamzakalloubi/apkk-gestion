@@ -15,12 +15,14 @@ class CreateDemandesTable extends Migration
     {
         Schema::create('demandes', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
-            $table->date('datedemande')->nullable();
-            $table->string('Nom');
+             $table->string('Nom');
             $table->string('Prénom');
             $table->string('CNE');
             $table->string('Apogée');
+            $table->timestamps();
+            
+            $table->date('datedemande')->nullable();
+
             $table->string('Année_scolarité');
             $table->string('situation')->default('en cours')->nullable();
 

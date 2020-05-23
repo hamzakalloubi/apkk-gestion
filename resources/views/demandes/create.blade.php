@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="{{mix('/css/app.css')}}">
 <link rel="stylesheet" href="{{mix('/css/theme.css')}}">
 
-    <title>Gestion</title>
+    <title>Retrait</title>
 </head>
 <body>
   @extends('index')

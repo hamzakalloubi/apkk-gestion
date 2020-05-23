@@ -15,11 +15,17 @@ class CreateRetraitsTable extends Migration
     {
         Schema::create('retraits', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('Nom');
+            $table->string('Prénom');
+            $table->string('CNE');
+            $table->string('Apogée');
             $table->timestamps();
+            
             $table->date('dateretrait')->nullable();
             $table->string('situationretrait')->default('en cours')->nullable();
             $table->date('dateretour')->nullable();
             $table->string('typeretrait')->nullable();
+
 
             $table->integer('demande_id')->unsigned();
 

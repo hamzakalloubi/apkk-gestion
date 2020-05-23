@@ -51,6 +51,10 @@ class DemandeController extends Controller
     
 
         $retrait = new Retrait();
+        $retrait->Nom = $request->input('Nom');
+        $retrait->Prénom = $request->input('Prénom');
+        $retrait->CNE = $request->input('CNE');
+        $retrait->Apogée = $request->input('Apogée');
         $retrait->typeretrait = $request->input('typeretrait');
         $retrait->dateretour = $request->input('dateretour');
         $retrait->dateretrait = $request->input('dateretrait');
