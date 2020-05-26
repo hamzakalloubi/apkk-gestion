@@ -4,7 +4,7 @@
 <head>
     <!-- Required meta tags-->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="iewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="au theme template">
     <meta name="author" content="Hau Nguyen">
     <meta name="keywords" content="au theme template">
@@ -82,15 +82,15 @@
 
                         <li class="active has-sub">
 
-                            <a href="FormRet">
-                                <i class="fas fa-check-square"></i>Les demandes prets</a>
+                            <a href="{{ url('/tableRemise')}}">
+                                <i class="fas fa-check-square"></i>Les demandes remise</a>
 
                     </li>
 
                     <li class="active has-sub">
 
-                        <a href="tableRemise">
-                            <i class="fas fa-sync"></i>Les demandes en cour de traitement</a>
+                        <a href="{{ url('/tableRetrait')}}">
+                            <i class="fas fa-sync"></i>Les demandes retrait</a>
                 </li>
 
                 <li class="active has-sub">

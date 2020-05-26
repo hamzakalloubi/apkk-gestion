@@ -4,11 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Demande;
-use App\Retrait;
 use App\Remise;
 use App\Diplome;
+use App\Retrait;
 
-class DemandeController extends Controller
+class RetraitController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -28,7 +28,7 @@ class DemandeController extends Controller
     public function create()
     {
         $diplomes = Diplome::all();
-       return view('demandes.create',['diplomes'=>$diplomes]);
+       return view('retraits.create',['diplomes'=>$diplomes]);
     }
 
     /**
@@ -46,24 +46,23 @@ class DemandeController extends Controller
         $demande->Apogée = $request->input('Apogée');
         //$demande->diplome_id = $request->input('diplome_id');
         $demande->Année_scolarité = $request->input('Année_scolarité');
-      
+        
+        
         
             $demande->save();
-    
+          
 
+            
         $retrait = new Retrait();
-        $retrait->Type_retrait = $request->input('Type_retrait');
-        $retrait->dateretour = $request->input('dateretour');
         $retrait->dateretrait = $request->input('dateretrait');
         $retrait->situationretrait = $request->input('situationretrait');
+        
         $retrait->demande_id=$demande->id;
        
 
         $retrait->save();
 
         return redirect()->back();  
-
-
     }
 
     /**
@@ -74,10 +73,9 @@ class DemandeController extends Controller
      */
     public function show($id)
     {
-        return view('demandes.show', [
-            'demande' => Demande::find($id)
-        ]);
+        return view('retrait.show', [
+            'demande' => Demande::find($id) ]);
 
+        }
+    
     }
-
-}

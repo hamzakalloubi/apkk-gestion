@@ -30,6 +30,8 @@ class RemiseController extends Controller
        return view('remises.create',['diplomes'=>$diplomes]);
     }
 
+    
+
     /**
      * Store a newly created resource in storage.
      *
@@ -53,10 +55,6 @@ class RemiseController extends Controller
 
             
         $remise = new Remise();
-        $remise->Nom = $request->input('Nom');
-        $remise->Prénom = $request->input('Prénom');
-        $remise->CNE = $request->input('CNE');
-        $remise->Apogée = $request->input('Apogée');
         $remise->dateremise = $request->input('dateremise');
         $remise->situationremise = $request->input('situationremise');
         $remise->demande_id=$demande->id;
@@ -78,6 +76,8 @@ class RemiseController extends Controller
         return view('remises.show', [
             'demande' => Demande::find($id) ]);
 
-        }
+        
     
     }
+
+}

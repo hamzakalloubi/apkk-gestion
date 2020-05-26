@@ -15,12 +15,8 @@ class CreateRetraitsTable extends Migration
     {
         Schema::create('retraits', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('Nom');
-            $table->string('Prénom');
-            $table->string('CNE');
-            $table->string('Apogée');
             $table->timestamps();
-            
+            $table->string("Type_retrait");
             $table->date('dateretrait')->nullable();
             $table->string('situationretrait')->default('en cours')->nullable();
             $table->date('dateretour')->nullable();

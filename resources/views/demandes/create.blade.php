@@ -73,7 +73,7 @@
                                             <option value="1">bacalauriat</option>
                                             <option value="2">deug</option>
                                             <option value="3">Licence</option>
-                                            <option value="2">Master</option>
+                                            <option value="4">Master</option>
                                         </select>
                                       </div>
 
@@ -94,12 +94,12 @@
 
                                 <div class="radio"  >
                                   <label>
-                                    <input class="flat" type="radio" name="Type_retrait" id="Retrait temporaire" value="Retrait temporaire" checked> Retrait temporaire
+                                    <input class="flat" type="radio" name="Type_retrait"value="Temporaire" checked> Retrait temporaire
                                   </label>
                                 </div>
                                 <div class="radio" style="display: inline-block;">
                                   <label>
-                                    <input class="flat" type="radio" name="Type_retrait" id="Retrait final" value="Retrait final"> Retrait final
+                                    <input class="flat" type="radio" name="Type_retrait"  value="Final"> Retrait final
                                   </label>
                                 </div>
                                 <div class="radio">

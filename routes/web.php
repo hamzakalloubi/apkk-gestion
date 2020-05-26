@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Remise;
+use App\Retrait;
+use App\Demande;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,8 +27,14 @@ Route::get('/index', function () {
     return view('index');
 });
 
-Route::get('tableRemise', function () {
-    return view('remises.tableRemise');
+Route::get('/tableRemise', function () {
+    $remises = Remise::with('demande')->get();
+    return view('remises.tableRemise', ['remises'=>$remises]);
+});
+
+Route::get('/tableRetrait', function () {
+    $retraits = Retrait::with('demande')->get();
+    return view('retraits.tableRetrait', ['retraits'=>$retraits]);
 });
 
 
@@ -36,4 +44,5 @@ Route::resource('/retraits', 'DemandeController')
 
 Route::resource('/remises', 'RemiseController')
        ->only(['index', 'show', 'create', 'store']);
+
 

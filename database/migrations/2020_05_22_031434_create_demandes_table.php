@@ -20,9 +20,7 @@ class CreateDemandesTable extends Migration
             $table->string('CNE');
             $table->string('Apogée');
             $table->timestamps();
-            
             $table->date('datedemande')->nullable();
-
             $table->string('Année_scolarité');
             $table->string('situation')->default('en cours')->nullable();
 

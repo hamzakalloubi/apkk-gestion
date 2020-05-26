@@ -23,69 +23,67 @@
 	<link rel="stylesheet" type="text/css" href="/css3/main.css">
 <!--===============================================================================================-->
 </head>
-<body>
+
+	
 	<div class="limiter">
 		<div class="container-table100">
 			<div class="wrap-table100">
 				<!-- Small button groups (default and split) -->
-					<div class="row justify-content-end">
-						<div class="col-2">
-							<div class="btn-group mb-2">
-								<button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								Small button
-								</button>
-								<div class="dropdown-menu">
-								<a>Pret</a>
-								<a>En cour</a>
-								<a>Refusé</a>
-								</div>
+				<div class="row justify-content-end">
+					<div class="col-2">
+						<div class="btn-group mb-2">
+							<button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Small button
+							</button>
+							<div class="dropdown-menu">
+							...
 							</div>
 						</div>
 					</div>
-
-					
-					<div class="row">
-						<div class="col-12">
-						<div class="table100 ver1 m-b-110">
-							<div class="table100-head">
-								<table>
-									<thead>
-										<tr class="row100 head">
-											<th class="cell100 column1">CNE</th>	
-											<th class="cell100 column2">Nom</th>
-											<th class="cell100 column3">Prénom</th>
-											<th class="cell100 column4">Apogée</th>
-											<th class="cell100 column6">Situation</th>								</tr>
-									</thead>
-								</table>
-							</div>
-
-							<div class="table100-body js-pscroll">
-								<table>
-									<tbody>
-										@foreach($remises as $remise)
-										<tr class="row100 body">
-											<td class="cell100 column1">{{$remise->demande->CNE}}</td>
-											<td class="cell100 column2">{{$remise->demande->Nom}}</td>
-											<td class="cell100 column3">{{$remise->demande->Prénom}}</td>								
-											<td class="cell100 column4">{{$remise->demande->Apogée}}</td>
-											<td class="cell100 column6">{{$remise->demande->situation}}</td>
-										</tr>
-										@endforeach
-
-										
-									</tbody>
-								</table>
-
-							</div>
-						</div>
-						</div>
+				</div>
+				<div class="table100 ver1 m-b-110">
+					<div class="table100-head">
+						<table>
+							<thead>
+								<tr class="row100 head">
+									<th class="cell100 column1">CNE</th>	
+									<th class="cell100 column2">Nom</th>
+									<th class="cell100 column3">Prénom</th>
+									<th class="cell100 column4">Apogée</th>
+									<th class="cell100 column5">Type retrait</th>
+									<th class="cell100 column6">Situation</th>								</tr>
+							</thead>
+						</table>
 					</div>
+
+					<div class="table100-body js-pscroll">
+						<table>
+							<tbody>
+								@foreach($retraits as $retrait)
+								<tr class="row100 body">
+									<td class="cell100 column1">{{$retrait->demande->CNE}}</td>
+									<td class="cell100 column2">{{$retrait->demande->Nom}}</td>
+									<td class="cell100 column3">{{$retrait->demande->Prénom}}</td>								
+									<td class="cell100 column4">{{$retrait->demande->Apogée}}</td>
+									<td class="cell100 column4">{{$retrait->Type_retrait}}</td>
+									<td class="cell100 column6">{{$retrait->demande->situation}}</td>
+								</tr>
+								@endforeach
+
+								
+							</tbody>
+						</table>
+
+					</div>
+				</div>
 				
+		
+				</div>
 			</div>
 		</div>
 	</div>
-</body>
+
+
 <!--===============================================================================================-->	
 	<script src="/vendor3/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
