@@ -33,14 +33,24 @@
 					<div class="col-2">
 						<div class="btn-group mb-2">
 							<button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							Small button
+							Affichage
 							</button>
 							<div class="dropdown-menu">
-							...
+								<div class="dropdown-item">
+									Pret
+								  </div>
+								  <div class="dropdown-item">
+									En cour
+								  </div>
+								  <div class="dropdown-item">
+									Refusé
+								  </div>
 							</div>
 						</div>
 					</div>
 				</div>
+
+				
 				<div class="table100 ver1 m-b-110">
 					<div class="table100-head">
 						<table>

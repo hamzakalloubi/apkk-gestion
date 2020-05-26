@@ -79,5 +79,17 @@ class RemiseController extends Controller
         
     
     }
+    public function edit($remise){
+
+        $remise = Demande::find($remise);
+
+        return view('remises.edit',[
+            'demande' => $remise
+        ]);
+    }
+
+    public function update(){
+
+    }
 
 }

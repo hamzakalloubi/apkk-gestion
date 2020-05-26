@@ -32,12 +32,18 @@
 						<div class="col-2">
 							<div class="btn-group mb-2">
 								<button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								Small button
+								Affichage
 								</button>
 								<div class="dropdown-menu">
-								<a>Pret</a>
-								<a>En cour</a>
-								<a>Refusé</a>
+									<div class="dropdown-item">
+										Pret
+									  </div>
+									  <div class="dropdown-item">
+										En cour
+									  </div>
+									  <div class="dropdown-item">
+										Refusé
+									  </div>
 								</div>
 							</div>
 						</div>
@@ -54,8 +60,10 @@
 											<th class="cell100 column1">CNE</th>	
 											<th class="cell100 column2">Nom</th>
 											<th class="cell100 column3">Prénom</th>
-											<th class="cell100 column4">Apogée</th>
-											<th class="cell100 column6">Situation</th>								</tr>
+											<th class="cell100 column4">Apogée</th>										
+											<th class="cell100 column5">Situation</th>
+											<th class="cell100 column6">Edit</th>
+										</tr>
 									</thead>
 								</table>
 							</div>
@@ -69,7 +77,8 @@
 											<td class="cell100 column2">{{$remise->demande->Nom}}</td>
 											<td class="cell100 column3">{{$remise->demande->Prénom}}</td>								
 											<td class="cell100 column4">{{$remise->demande->Apogée}}</td>
-											<td class="cell100 column6">{{$remise->demande->situation}}</td>
+											<td class="cell100 column5">{{$remise->demande->situation}}</td>
+										<td class="cell100 column6"><a href="{{ route('remises.edit', ['remise' => $remise->id ])}}">Edit</a></td>
 										</tr>
 										@endforeach
 

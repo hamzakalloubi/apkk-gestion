@@ -93,11 +93,6 @@
                             <i class="fas fa-sync"></i>Les demandes retrait</a>
                 </li>
 
-                <li class="active has-sub">
-
-                    <a href="FormRet">
-                        <i class="far fa-times-circle"></i>Les demandes refusés</a>
-            </li>
                     </ul>
                 </nav>
             </div>

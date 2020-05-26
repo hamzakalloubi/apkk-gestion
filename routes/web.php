@@ -37,12 +37,17 @@ Route::get('/tableRetrait', function () {
     return view('retraits.tableRetrait', ['retraits'=>$retraits]);
 });
 
+Route::get('/edit', function () {
+    $remises = Remise::with('demande')->get();
+    return view('remises.edit', ['remises'=>$remises]);
+});
 
 
 Route::resource('/retraits', 'DemandeController')
        ->only(['index', 'show', 'create', 'store']);
 
+
 Route::resource('/remises', 'RemiseController')
-       ->only(['index', 'show', 'create', 'store']);
+       ->except(['destroy']);
 
 
