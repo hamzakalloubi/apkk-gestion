@@ -27,21 +27,21 @@
                               <h3 class="text-center title-2">Demande de remise</h3>
                           </div>
                           <hr>
-                          <form   action="{{  route('remises.update', ['demande' => $remise->id] )}}" method="POST" novalidate="novalidate">
-                            @csrf
-                            @method('PUT')
+                          <form   action="{{  route('remises.update', ['demande' => $remise->demande->id,'remise'=>$remise->id] )}}" method="POST" novalidate="novalidate">
+                            {{ csrf_field() }}
+                            <input type="hidden" name="_method" value="PUT">
                             <div class="row">
                               <div class="col-6">
                                  <div class="form-group has-success">
                                      <label >Nom :
-                                     <input style="" type="text" class="form-control" name="Nom" placeholder="Nom d'etudiant" value="{{old('Nom', $remise->Nom)}}">
+                                     <input style="" type="text" class="form-control" name="Nom" placeholder="Nom d'etudiant" value="{{$remise->Nom}}">
                                      <small id="" class="form-text text-muted"></small>
                                   </div>
                               </div>
                               <div class="col-6">
                               <div class="form-group">
                                 <label >Prénom :
-                                  <input style="" type="text" class="form-control" name="Prénom" placeholder="Prénom d'etudiant" value="{{old('Prénom', $remise->Prénom)}}">
+                                  <input style="" type="text" class="form-control" name="Prénom" placeholder="Prénom d'etudiant" value="{{$remise->Prénom}}">
 
                                   <small id="" class="form-text text-muted"></small>
                                 </div>
@@ -53,14 +53,14 @@
                                      <div class="col-6">
                                         <div class="form-group has-success">
                                             <label >CNE :
-                                            <input style="" type="text" class="form-control" name="CNE" placeholder="CNE d'etudiant" value="{{old('CNE', $remise->CNE)}}">
+                                            <input style="" type="text" class="form-control" name="CNE" placeholder="CNE d'etudiant" value="{{$remise->CNE}}">
                                             <small id="" class="form-text text-muted"></small>
                                          </div>
                                      </div>
                                      <div class="col-6">
                                           <div class="form-group">
                                          <label >Apogée :
-                                        <input style=""type="text" class="form-control" name="Apogée" placeholder="apogée d'etudiant" value="{{old('Apogée', $remise->Apogée)}}">
+                                        <input style=""type="text" class="form-control" name="Apogée" placeholder="apogée d'etudiant" value="{{$remise->Apogée}}">
                                            <small id="" class="form-text text-muted"></small>
                                        </div>
                                 </div>
@@ -72,7 +72,7 @@
                                         <label >Diplome :
                                           <select name="select" name="Diplome" class="form-control">
                                             <option value="1" >bacalauriat</option>
-                                            <option value="">deug</option>
+                                            <option value="2">deug</option>
                                             <option value="3">Licence</option>
                                             <option value="2">Master</option>
                                         </select>
@@ -81,7 +81,7 @@
                                   </div>
                                   <div class="col-6">
                                     <label >Anneé scolarité :
-                                      <input style="margin-left: 1px; " type="text" name="Année_scolarité" class="form-control" id="" placeholder="date" value="{{old('Année_scolarité', $remise->Année_scolarité)}}">
+                                      <input style="margin-left: 1px; " type="text" name="Année_scolarité" class="form-control" id="" placeholder="date" value="{{$remise->Année_scolarité}}">
                                       <small id="" class="form-text text-muted"></small>
                                       </div>
 

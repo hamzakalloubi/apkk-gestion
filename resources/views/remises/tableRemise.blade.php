@@ -78,7 +78,10 @@
 											<td class="cell100 column3">{{$remise->demande->Prénom}}</td>								
 											<td class="cell100 column4">{{$remise->demande->Apogée}}</td>
 											<td class="cell100 column5">{{$remise->demande->situation}}</td>
-										<td class="cell100 column6"><a href="{{ route('remises.edit', ['remise' => $remise->id ])}}">Edit</a></td>
+										<td class="cell100 column6">
+											<a style="margin:6px" class="btn btn-success" href="{{route('remises.edit',['remise'=>$remise->id, 'demande'=>$remise->demande->id])}}">
+											
+											
 										</tr>
 										@endforeach
 

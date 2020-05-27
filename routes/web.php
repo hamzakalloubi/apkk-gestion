@@ -48,6 +48,12 @@ Route::resource('/retraits', 'DemandeController')
 
 
 Route::resource('/remises', 'RemiseController')
+       ->except(['destroy','edit','update']);
+Route::get('/remises/{remise}/{demande}/edit','RemiseController@edit')->name('remises.edit');
+Route::put('/remises/{remise}/{demande}/edit','RemiseController@update')->name('remises.update');
+
+
+Route::resource('/demandes', 'DemandeController')
        ->except(['destroy']);
 
 
