@@ -47,14 +47,12 @@ Route::resource('/retraits', 'DemandeController')
        ->only(['index', 'show', 'create', 'store']);
 
 
-Route::resource('/remises', 'RemiseController')
-       ->except(['destroy', 'edit','update']);
+Route::resource('/remises', 'RemiseController');
 Route::get('/remises/{remise}/{demande}/edit','RemiseController@edit')->name('remises.edit');
 Route::put('/remises/{remise}/{demande}/edit','RemiseController@update')->name('remises.update');
 Route::delete('/remises/{remise}/{demande}/edit','RemiseController@destroy')->name('remises.destroy');
 
 
-Route::resource('/demandes', 'DemandeController')
-       ->except(['destroy']);
+Route::resource('/demandes', 'DemandeController');
 
 

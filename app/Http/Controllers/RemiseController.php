@@ -90,16 +90,25 @@ class RemiseController extends Controller
     }
 
     public function update( Request $request, $remise, $demande){
-        
-        $remise = Remise::findOrFail($remise)->first();
+     
 
-        $remise->Nom = $request->input('Nom');
-        $remise->Prénom = $request->input('Prénom');
-        $remise->CNE = $request->input('CNE');
-        $remise->Apogée = $request->input('Apogée');
-        $remise->Année_scolarité = $request->input('Année_scolarité');
+        $demande = Demande::findOrFail($demande)->first();
+        $demande->Nom = $request->input('Nom');
+        $demande->Prénom = $request->input('Prénom');
+        $demande->CNE = $request->input('CNE');
+        $demande->Apogée = $request->input('Apogée');
+        //$demande->diplome_id = $request->input('diplome_id');
+        $demande->Année_scolarité= $request->input('Année_scolarité');
+
+        $demande->save();
+   
+        $remise = Remise::findOrFail($remise)->first();
+        $remise->dateremise = $request->input('dateremise');
+        $remise->situationremise = $request->input('situationremise');
+        $remise->demande_id=$demande->id;
 
         $remise->save();
+
 
         return redirect()->back();
         
@@ -107,11 +116,12 @@ class RemiseController extends Controller
 
     public function destroy(Request $request, $remise, $demande){
 
-        $remise = Remise::find($remise)->first();
-        dd($remise);
-        $remise->delete();
+     
 
-        //Remise::destroy($remise, $demande);
+        $demande = Demande::findOrFail($demande)->first();
+
+        $demande->delete();
+
 
         return redirect()->back();
         

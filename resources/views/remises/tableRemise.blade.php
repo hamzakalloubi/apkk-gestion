@@ -89,7 +89,7 @@
 												@method('DELETE')
 											
 												<div class="form-group">
-												  <input type="submit" class="btn btn-danger" value="Delete user">
+												  <input type="submit" class="btn btn-danger" value="Delete">
 												</div>
 											  </form>
 										</td>
