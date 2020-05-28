@@ -89,8 +89,32 @@ class RemiseController extends Controller
         ]);
     }
 
-    public function update($demande,$remise){
+    public function update( Request $request, $remise, $demande){
+        
+        $remise = Remise::findOrFail($remise)->first();
 
+        $remise->Nom = $request->input('Nom');
+        $remise->Prénom = $request->input('Prénom');
+        $remise->CNE = $request->input('CNE');
+        $remise->Apogée = $request->input('Apogée');
+        $remise->Année_scolarité = $request->input('Année_scolarité');
+
+        $remise->save();
+
+        return redirect()->back();
+        
+    }
+
+    public function destroy(Request $request, $remise, $demande){
+
+        $remise = Remise::find($remise)->first();
+        dd($remise);
+        $remise->delete();
+
+        //Remise::destroy($remise, $demande);
+
+        return redirect()->back();
+        
     }
 
 }

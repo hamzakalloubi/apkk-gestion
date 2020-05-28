@@ -34,14 +34,14 @@
                               <div class="col-6">
                                  <div class="form-group has-success">
                                      <label >Nom :
-                                     <input style="" type="text" class="form-control" name="Nom" placeholder="Nom d'etudiant" value="{{$remise->Nom}}">
+                                     <input style="" type="text" class="form-control" name="Nom" placeholder="{{$remise->Nom}}">
                                      <small id="" class="form-text text-muted"></small>
                                   </div>
                               </div>
                               <div class="col-6">
                               <div class="form-group">
                                 <label >Prénom :
-                                  <input style="" type="text" class="form-control" name="Prénom" placeholder="Prénom d'etudiant" value="{{$remise->Prénom}}">
+                                  <input style="" type="text" class="form-control" name="Prénom" placeholder="{{$remise->Prénom}}">
 
                                   <small id="" class="form-text text-muted"></small>
                                 </div>
@@ -53,14 +53,14 @@
                                      <div class="col-6">
                                         <div class="form-group has-success">
                                             <label >CNE :
-                                            <input style="" type="text" class="form-control" name="CNE" placeholder="CNE d'etudiant" value="{{$remise->CNE}}">
+                                            <input style="" type="text" class="form-control" name="CNE" placeholder="{{$remise->CNE}}">
                                             <small id="" class="form-text text-muted"></small>
                                          </div>
                                      </div>
                                      <div class="col-6">
                                           <div class="form-group">
                                          <label >Apogée :
-                                        <input style=""type="text" class="form-control" name="Apogée" placeholder="apogée d'etudiant" value="{{$remise->Apogée}}">
+                                        <input style=""type="text" class="form-control" name="Apogée" placeholder="{{$remise->Apogée}}" >
                                            <small id="" class="form-text text-muted"></small>
                                        </div>
                                 </div>
@@ -81,7 +81,7 @@
                                   </div>
                                   <div class="col-6">
                                     <label >Anneé scolarité :
-                                      <input style="margin-left: 1px; " type="text" name="Année_scolarité" class="form-control" id="" placeholder="date" value="{{$remise->Année_scolarité}}">
+                                      <input style="margin-left: 1px; " type="text" name="Année_scolarité" class="form-control" placeholder="{{$remise->Année_scolarité}}" >
                                       <small id="" class="form-text text-muted"></small>
                                       </div>
 
