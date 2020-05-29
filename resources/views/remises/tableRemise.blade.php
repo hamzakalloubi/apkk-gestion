@@ -79,12 +79,13 @@
 											<td class="cell100 column4">{{$remise->demande->Apogée}}</td>
 											<td class="cell100 column5">{{$remise->demande->situation}}</td>
 										<td class="cell100 column6">
-											<a style="margin:6px" class="btn btn-success" href="{{route('remises.edit',['remise'=>$remise->id, 'demande'=>$remise->demande->id])}}">
+											<a style="margin:6px" class="btn btn-success"  href="{{route('remises.edit',['remise'=>$remise->id, 'demande'=>$remise->demande->id])}}">
 											</a>
 											
 
+									
 
-											<form id="delete-form" method="POST" action="{{route('remises.destroy',['remise'=>$remise->id, 'demande'=>$remise->demande->id])}}">
+											<form id="delete-form" style="display: inline-block;" method="POST" action="{{route('remises.destroy',['remise'=>$remise->id, 'demande'=>$remise->demande->id])}}">
 												@csrf
 												@method('DELETE')
 											

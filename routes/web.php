@@ -41,10 +41,16 @@ Route::get('/edit', function () {
     $remises = Remise::with('demande')->get();
     return view('remises.edit', ['remises'=>$remises]);
 });
+Route::get('/edit', function () {
+    $retraits= Retrait::with('demande')->get();
+    return view('retraits.edit', ['retraits'=>$retraits]);
+});
 
+Route::resource('/retraits', 'DemandeController');
+Route::get('/retraits/{retrait}/{demande}/edit','DemandeController@edit')->name('retraits.edit');
+Route::put('/retraits/{retrait}/{demande}/edit','DemandeController@update')->name('retraits.update');
+Route::delete('/retraits/{retrait}/{demande}/edit','DemandeController@destroy')->name('retraits.destroy');
 
-Route::resource('/retraits', 'DemandeController')
-       ->only(['index', 'show', 'create', 'store']);
 
 
 Route::resource('/remises', 'RemiseController');

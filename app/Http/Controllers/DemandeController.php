@@ -65,31 +65,54 @@ class DemandeController extends Controller
 
 
     }
+    public function edit($retrait,$demande){
+       
+        $retrait = Retrait::find($retrait)->first();
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        return view('demandes.show', [
-            'demande' => Demande::find($id)
-        ]);
-
-    }
-    public function edit($demande){
-
-        $remise = Demande::find($demande);
-
-        return view('remises.edit',[
-            'demande' => $remise
+        return view('retraits.edit',[
+            
+            'retrait'=> $retrait
         ]);
     }
 
-    public function update(){
+public function update( Request $request, $retrait, $demande){
+     
 
+        $demande = Demande::findOrFail($demande)->first();
+        $demande->Nom = $request->input('Nom');
+        $demande->Prénom = $request->input('Prénom');
+        $demande->CNE = $request->input('CNE');
+        $demande->Apogée = $request->input('Apogée');
+        //$demande->diplome_id = $request->input('diplome_id');
+        $demande->Année_scolarité= $request->input('Année_scolarité');
+
+        $demande->save();
+   
+        $retrait = Retrait::findOrFail($retrait)->first();
+        $retrait->dateretrait = $request->input('dateretrait');
+        $retrait->situationretrait = $request->input('situationretrait');
+        $retrait->demande_id=$demande->id;
+
+        $retrait->save();
+
+
+        return redirect()->back();
+        
     }
+
+public function destroy(Request $request, $retrait, $demande){
+
+     
+
+        $demande = Demande::findOrFail($demande)->first();
+
+        $demande->delete();
+
+
+        return redirect()->back();
+        
+    }
+
+
 
 }

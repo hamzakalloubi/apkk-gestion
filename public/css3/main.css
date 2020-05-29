@@ -213,6 +213,33 @@ th, td {
   width: 15%;
 }
 
+.column11 {
+  width: 16%;
+  padding-left: 40px;
+}
+
+.column12 {
+  width: 14%;
+}
+
+.column13 {
+  width: 14%;
+}
+
+.column14 {
+  width: 14%;
+}
+
+.column15 {
+  width: 14%;
+}
+.column16 {
+  width: 14%;
+}
+.column17 {
+  width: 14%;
+}
+
 .table100-head th {
   padding-top: 18px;
   padding-bottom: 18px;
@@ -421,7 +448,9 @@ th, td {
 .table100.ver4 .column1 {
   padding-left: 7px;
 }
-
+.table100.ver4 .column11 {
+  padding-left: 7px;
+}
 .table100.ver4 td {
   font-family: Lato-Regular;
   font-size: 15px;

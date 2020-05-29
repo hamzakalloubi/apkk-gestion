@@ -56,12 +56,14 @@
 						<table>
 							<thead>
 								<tr class="row100 head">
-									<th class="cell100 column1">CNE</th>	
-									<th class="cell100 column2">Nom</th>
-									<th class="cell100 column3">Prénom</th>
-									<th class="cell100 column4">Apogée</th>
-									<th class="cell100 column5">Type retrait</th>
-									<th class="cell100 column6">Situation</th>								</tr>
+									<th class="cell100 column11">CNE</th>	
+									<th class="cell100 column12">Nom</th>
+									<th class="cell100 column13">Prénom</th>
+									<th class="cell100 column14">Apogée</th>
+									<th class="cell100 column15">Type retrait</th>
+									<th class="cell100 column16">Situation</th>			
+									<th class="cell100 column17">Situation</th>
+								</tr>
 							</thead>
 						</table>
 					</div>
@@ -71,12 +73,33 @@
 							<tbody>
 								@foreach($retraits as $retrait)
 								<tr class="row100 body">
-									<td class="cell100 column1">{{$retrait->demande->CNE}}</td>
-									<td class="cell100 column2">{{$retrait->demande->Nom}}</td>
-									<td class="cell100 column3">{{$retrait->demande->Prénom}}</td>								
-									<td class="cell100 column4">{{$retrait->demande->Apogée}}</td>
-									<td class="cell100 column4">{{$retrait->Type_retrait}}</td>
-									<td class="cell100 column6">{{$retrait->demande->situation}}</td>
+									<td class="cell100 column11">{{$retrait->demande->CNE}}</td>
+									<td class="cell100 column12">{{$retrait->demande->Nom}}</td>
+									<td class="cell100 column13">{{$retrait->demande->Prénom}}</td>								
+									<td class="cell100 column14">{{$retrait->demande->Apogée}}</td>
+									<td class="cell100 column14">{{$retrait->Type_retrait}}</td>
+									<td class="cell100 column16">{{$retrait->demande->situation}}</td>
+									<td class="cell100 column17">
+
+										<a style="margin:6px" class="btn btn-success"  href="{{route('retraits.edit',['retrait'=>$retrait->id, 'demande'=>$retrait->demande->id])}}">
+										</a>
+										
+
+								
+
+										<form id="delete-form" style="display: inline-block;" method="POST" action="{{route('retraits.destroy',['retrait'=>$retrait->id, 'demande'=>$retrait->demande->id])}}">
+											@csrf
+											@method('DELETE')
+										
+											<div class="form-group">
+											  <input type="submit" class="btn btn-danger" value="Delete">
+											</div>
+										  </form>
+
+
+									</td>
+
+				
 								</tr>
 								@endforeach
 
