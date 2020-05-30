@@ -62,3 +62,12 @@ Route::delete('/remises/{remise}/{demande}/edit','RemiseController@destroy')->na
 Route::resource('/demandes', 'DemandeController');
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+
+
+
