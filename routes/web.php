@@ -77,3 +77,11 @@ Route::resource('/demandes', 'DemandeController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+<<<<<<< HEAD
+=======
+
+
+
+
+
+>>>>>>> d8bc49126d1498749a901a179e93e56d739e20de
