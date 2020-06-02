@@ -20,8 +20,6 @@ class CreateRetraitsTable extends Migration
             $table->date('dateretrait')->nullable();
             $table->string('situationretrait')->default('en cours')->nullable();
             $table->date('dateretour')->nullable();
-            $table->string('typeretrait')->nullable();
-
 
             $table->integer('demande_id')->unsigned();
 

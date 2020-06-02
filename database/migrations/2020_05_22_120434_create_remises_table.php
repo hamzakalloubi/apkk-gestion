@@ -25,6 +25,7 @@ class CreateRemisesTable extends Migration
             $table->foreign('demande_id')
             ->references('id')
             ->on('demandes')->onDelete('cascade');
+
         });
     }
 

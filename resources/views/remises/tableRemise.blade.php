@@ -30,6 +30,11 @@
 				<!-- Small button groups (default and split) -->
 					<div class="row justify-content-end">
 						<div class="col-2">
+
+
+							</script>
+
+
 							<div class="btn-group mb-2">
 								<button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								Affichage
@@ -78,19 +83,35 @@
 											<td class="cell100 column3">{{$remise->demande->Prénom}}</td>								
 											<td class="cell100 column4">{{$remise->demande->Apogée}}</td>
 											<td class="cell100 column5">{{$remise->demande->situation}}</td>
+
 										<td class="cell100 column6">
 											<a style="margin:6px" class="btn btn-success"  href="{{route('remises.edit',['remise'=>$remise->id, 'demande'=>$remise->demande->id])}}">
 											</a>
 											
 
-									
+											<form  style="display: inline-block;" method="POST" action="{{route('remises.valid',$remise->demande->id)}}">
+												@csrf
+												
+												<div class="form-group">
+												  <input type="submit" class="btn btn-gray" value="Validé">
+												</div>
+											  </form>
+
+											  <form id="delete-form" style="display: inline-block;" method="POST" action="{{route('remises.refuse',['remise'=>$remise->id, 'demande'=>$remise->demande->id])}}">
+												@csrf
+												@method('PUT')
+											
+												<div class="form-group">
+												  <input type="submit" class="btn btn-green" value="Refusée">
+												</div>
+											  </form>
+											
 
 											<form id="delete-form" style="display: inline-block;" method="POST" action="{{route('remises.destroy',['remise'=>$remise->id, 'demande'=>$remise->demande->id])}}">
 												@csrf
 												@method('DELETE')
-											
 												<div class="form-group">
-												  <input type="submit" class="btn btn-danger" value="Delete">
+												  <input  type="submit" class="btn btn-danger" value="Delete" >
 												</div>
 											  </form>
 										</td>

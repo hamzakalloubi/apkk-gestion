@@ -62,7 +62,7 @@
 									<th class="cell100 column14">Apogée</th>
 									<th class="cell100 column15">Type retrait</th>
 									<th class="cell100 column16">Situation</th>			
-									<th class="cell100 column17">Situation</th>
+									<th class="cell100 column17">Modification</th>
 								</tr>
 							</thead>
 						</table>
@@ -82,20 +82,38 @@
 									<td class="cell100 column17">
 
 										<a style="margin:6px" class="btn btn-success"  href="{{route('retraits.edit',['retrait'=>$retrait->id, 'demande'=>$retrait->demande->id])}}">
+									
 										</a>
+
+
+										
+										<form style="display: inline-block;" method="POST" action="{{route('retraits.valid',$retrait->demande->id)}}">
+											@csrf
+								
+										
+											<div class="form-group">
+											  <input type="submit" class="btn btn-gray" value="Validé">
+											</div>
+										  </form>
+
+										  <form id="delete-form" style="display: inline-block;" method="POST" action="{{route('retraits.refuse',$retrait->demande->id)}}">
+											@csrf
+										
+										
+											<div class="form-group">
+											  <input type="submit" class="btn btn-gray" value="Refusée">
+											</div>
+										  </form>
 										
 
-								
 
-										<form id="delete-form" style="display: inline-block;" method="POST" action="{{route('retraits.destroy',['retrait'=>$retrait->id, 'demande'=>$retrait->demande->id])}}">
+										<form id="delete-form" style="display: inline-block;" method="POST" title="Delete" action="{{route('retraits.destroy',['retrait'=>$retrait->id, 'demande'=>$retrait->demande->id])}}">
 											@csrf
 											@method('DELETE')
 										
 											<div class="form-group">
 											  <input type="submit" class="btn btn-danger" value="Delete">
 											</div>
-										  </form>
-
 
 									</td>
 

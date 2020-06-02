@@ -90,7 +90,7 @@
 
 
                               <div style="margin-top: 2px;">
-                                  <button id="payment-button" type="submit" class="btn btn-lg btn-primary btn-block" >
+                                  <button id="payment-button" type="submit" class="btn btn-lg btn-success btn-block" >
                                       <i class="fas fa-paper-plane"></i>&nbsp;
                                       <span id="payment-button-amount">Update</span>
                                       <span id="payment-button-sending" style="display:none;">Sending…</span>

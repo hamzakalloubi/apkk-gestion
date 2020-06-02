@@ -39,6 +39,18 @@ class DemandeController extends Controller
      */
     public function store(Request $request)
     {
+
+        $validateData = $request->validate([
+            'Nom' => 'required',
+            'Prénom' => 'required',
+            'CNE' => 'required',
+            'Apogée' => 'required',
+            'Année_scolarité' => 'required'
+            
+
+        ]);
+
+        
         $demande = new Demande();
         $demande->Nom = $request->input('Nom');
         $demande->Prénom = $request->input('Prénom');
@@ -74,6 +86,25 @@ class DemandeController extends Controller
             'retrait'=> $retrait
         ]);
     }
+
+    public function valid($demande){
+ 
+        $demande = Demande::where('id','=',$demande)->first();
+ 
+         $demande->situation = "validée";
+         $demande->save();
+         return redirect()->back();
+     }
+     
+     public function refuse($demande){
+  
+         $demande = Demande::where('id','=',$demande)->first();
+ 
+         $demande->situation = "refusée";
+         $demande->save();
+         return redirect()->back();
+ 
+     }
 
 public function update( Request $request, $retrait, $demande){
      

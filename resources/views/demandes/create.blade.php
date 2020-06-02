@@ -33,14 +33,14 @@
                               <div class="col-6">
                                  <div class="form-group has-success">
                                      <label >Nom :
-                                     <input style="" type="text" class="form-control" name="Nom" placeholder="Nom d'etudiant">
+                                     <input style="" type="text" class="form-control" name="Nom" placeholder="Nom d'etudiant" value="{{ old('Nom')}}">
                                      <small id="" class="form-text text-muted"></small>
                                   </div>
                               </div>
                               <div class="col-6">
                               <div class="form-group">
                                 <label >Prénom :
-                                  <input style="" type="text" class="form-control" name="Prénom" placeholder="Prénom d'etudiant">
+                                  <input style="" type="text" class="form-control" name="Prénom" placeholder="Prénom d'etudiant" value="{{ old('Prénom')}}">
 
                                   <small id="" class="form-text text-muted"></small>
                                 </div>
@@ -52,14 +52,14 @@
                                      <div class="col-6">
                                         <div class="form-group has-success">
                                             <label >CNE :
-                                            <input style="" type="text" class="form-control" name="CNE" placeholder="CNE d'etudiant">
+                                            <input style="" type="text" class="form-control" name="CNE" placeholder="CNE d'etudiant" value="{{ old('CNE')}}">
                                             <small id="" class="form-text text-muted"></small>
                                          </div>
                                      </div>
                                      <div class="col-6">
                                           <div class="form-group">
                                          <label >Apogée :
-                                        <input style=""type="text" class="form-control" name="Apogée" placeholder="apogée d'etudiant">
+                                        <input style=""type="text" class="form-control" name="Apogée" placeholder="apogée d'etudiant" value="{{ old('Apogée')}}">
                                            <small id="" class="form-text text-muted"></small>
                                        </div>
                                 </div>
@@ -70,17 +70,17 @@
                                       <div class="form-group">
                                         <label >Diplome :
                                           <select name="select" name="Diplome" class="form-control">
-                                            <option value="1">bacalauriat</option>
-                                            <option value="2">deug</option>
-                                            <option value="3">Licence</option>
-                                            <option value="4">Master</option>
+                                            <option value="Bacalauriat">Bacalauriat</option>
+                                            <option value="Deug">Deug</option>
+                                            <option value="Licence">Licence</option>
+                                            <option value="Master">Master</option>
                                         </select>
                                       </div>
 
                                   </div>
                                   <div class="col-6">
                                     <label >Anneé scolarité :
-                                      <input style="margin-left: 1px; " type="text" name="Année_scolarité" class="form-control" id="" placeholder="date">
+                                      <input style="margin-left: 1px; " type="text" name="Année_scolarité" class="form-control" id="" placeholder="date" value="{{ old('Année_scolarité')}}">
                                       <small id="" class="form-text text-muted"></small>
                                       </div>
 
@@ -113,6 +113,14 @@
 
 
 
+
+                              @if($errors->any())
+                              <ul style="margin-left: 40px;">
+                                @foreach($errors->all() as $error)
+                              <li>{{ $error }}</li>
+                                @endforeach
+                              </ul>
+                              @endif
 
 
 
