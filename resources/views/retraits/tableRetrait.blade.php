@@ -81,40 +81,45 @@
 									<td class="cell100 column16">{{$retrait->demande->situation}}</td>
 									<td class="cell100 column17">
 
-										<a style="margin:6px" class="btn btn-success"  href="{{route('retraits.edit',['retrait'=>$retrait->id, 'demande'=>$retrait->demande->id])}}">
-									
-										</a>
 
-
-										
-										<form style="display: inline-block;" method="POST" action="{{route('retraits.valid',$retrait->demande->id)}}">
+										<form  style="display: inline-block;"  action="{{route('retraits.edit',['retrait'=>$retrait->id, 'demande'=>$retrait->demande->id])}}">
 											@csrf
-								
-										
-											<div class="form-group">
-											  <input type="submit" class="btn btn-gray" value="Validé">
-											</div>
+
+											<button  type="submit" class="btn btn-lg" style="background-color:transparent;padding: 0;">
+												<i class="far fa-edit" style="color: black;"></i> 
+											 </button>
 										  </form>
 
+
+
+										  <form  style="display: inline-block;" method="POST" action="{{route('retraits.valid',$retrait->demande->id)}}">
+											@csrf
+
+											<button  type="submit" class="btn btn-lg" style="background-color:transparent;padding: 0;">
+												<i class="far fa-check-square" style="color: green;"></i> 
+											 </button>
+										  </form>
+
+										 
 										  <form id="delete-form" style="display: inline-block;" method="POST" action="{{route('retraits.refuse',$retrait->demande->id)}}">
 											@csrf
+											@method('PUT')
 										
-										
-											<div class="form-group">
-											  <input type="submit" class="btn btn-gray" value="Refusée">
-											</div>
+											<button  type="submit" class="btn btn-lg" style="background-color:transparent; padding: 0;">
+												<i class="far fa-times-circle" style="color: black;"></i> 
+											 </button>
+											
 										  </form>
 										
 
 
-										<form id="delete-form" style="display: inline-block;" method="POST" title="Delete" action="{{route('retraits.destroy',['retrait'=>$retrait->id, 'demande'=>$retrait->demande->id])}}">
-											@csrf
-											@method('DELETE')
-										
-											<div class="form-group">
-											  <input type="submit" class="btn btn-danger" value="Delete">
-											</div>
-
+											<form id="delete-form" style="display: inline-block;" method="POST" action="{{route('retraits.destroy',['retrait'=>$retrait->id, 'demande'=>$retrait->demande->id])}}">
+												@csrf
+												@method('DELETE')
+												<button  type="submit" class="btn btn-lg" style="background-color:transparent; padding: 0;">
+													<i class="far fa-trash-alt" style="color: red;"></i> 
+												 </button>
+											  </form>
 									</td>
 
 				

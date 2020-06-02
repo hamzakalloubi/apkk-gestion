@@ -67,7 +67,7 @@
 											<th class="cell100 column3">Prénom</th>
 											<th class="cell100 column4">Apogée</th>										
 											<th class="cell100 column5">Situation</th>
-											<th class="cell100 column6">Edit</th>
+											<th class="cell100 column6">Modification</th>
 										</tr>
 									</thead>
 								</table>
@@ -85,34 +85,44 @@
 											<td class="cell100 column5">{{$remise->demande->situation}}</td>
 
 										<td class="cell100 column6">
-											<a style="margin:6px" class="btn btn-success"  href="{{route('remises.edit',['remise'=>$remise->id, 'demande'=>$remise->demande->id])}}">
-											</a>
-											
+										
+
+											<form  style="display: inline-block;"  action="{{route('remises.edit',['remise'=>$remise->id, 'demande'=>$remise->demande->id])}}">
+												@csrf
+
+												<button  type="submit" class="btn btn-lg" style="background-color:transparent;padding: 0;">
+													<i class="far fa-edit" style="color: black;"></i> 
+												 </button>
+											  </form>
+
+
+
 
 											<form  style="display: inline-block;" method="POST" action="{{route('remises.valid',$remise->demande->id)}}">
 												@csrf
-												
-												<div class="form-group">
-												  <input type="submit" class="btn btn-gray" value="Validé">
-												</div>
+
+												<button  type="submit" class="btn btn-lg" style="background-color:transparent;padding: 0;">
+													<i class="far fa-check-square" style="color: green;"></i> 
+												 </button>
 											  </form>
 
 											  <form id="delete-form" style="display: inline-block;" method="POST" action="{{route('remises.refuse',['remise'=>$remise->id, 'demande'=>$remise->demande->id])}}">
 												@csrf
 												@method('PUT')
 											
-												<div class="form-group">
-												  <input type="submit" class="btn btn-green" value="Refusée">
-												</div>
+												<button  type="submit" class="btn btn-lg" style="background-color:transparent; padding: 0;">
+													<i class="far fa-times-circle" style="color: black;"></i> 
+												 </button>
+												
 											  </form>
 											
 
 											<form id="delete-form" style="display: inline-block;" method="POST" action="{{route('remises.destroy',['remise'=>$remise->id, 'demande'=>$remise->demande->id])}}">
 												@csrf
 												@method('DELETE')
-												<div class="form-group">
-												  <input  type="submit" class="btn btn-danger" value="Delete" >
-												</div>
+												<button  type="submit" class="btn btn-lg" style="background-color:transparent; padding: 0;">
+													<i class="far fa-trash-alt" style="color: red;"></i> 
+												 </button>
 											  </form>
 										</td>
 

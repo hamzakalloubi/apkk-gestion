@@ -59,7 +59,7 @@ Route::get('/retraits/{retrait}/{demande}/edit','DemandeController@edit')->name(
 Route::put('/retraits/{retrait}/{demande}/edit','DemandeController@update')->name('retraits.update');
 Route::delete('/retraits/{retrait}/{demande}/edit','DemandeController@destroy')->name('retraits.destroy');
 Route::post('/retraits/{demande}/valid','DemandeController@valid')->name('retraits.valid');
-Route::post('/retraits/{demande}/refuse','DemandeController@refuse')->name('retraits.refuse');
+Route::put('/retraits/{demande}/refuse','DemandeController@refuse')->name('retraits.refuse');
 
 
 Route::resource('/remises', 'RemiseController');
