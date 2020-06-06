@@ -87,23 +87,25 @@ class RetraitController extends Controller
                 'retrait'=> $retrait
             ]);
         }
-        
-    public function valid($retrait,$demande){
-       
-        $remise = Remise::find($retrait)->first();
-        $remise->demande->situation = 'validé';
-        $remise->save();
-        return view('retraits.tableRemise');
-    }
 
-    public function refuse($retrait,$demande){
-       
-        $remise = Remise::find($retrait)->first();
-        $remise->demande->situation = 'refusée';
-        $remise->save();
-        return view('retraits.tableRemise');
-    }
-
+        public function valid($demande){
+ 
+            $demande = Demande::where('id','=',$demande)->first();
+     
+             $demande->situation = "validée";
+             $demande->save();
+             return redirect()->back();
+         }
+         
+         public function refuse($demande){
+      
+             $demande = Demande::where('id','=',$demande)->first();
+     
+             $demande->situation = "refusée";
+             $demande->save();
+             return redirect()->back();
+     
+         }
     
     public function update( Request $request, $retrait, $demande){
          

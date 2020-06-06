@@ -27,21 +27,21 @@
                               <h3 class="text-center title-2">Demande de retrait</h3>
                           </div>
                           <hr>
-                          <form   action="{{  route('retraits.update', ['demande' => $retrait->demande->id,'retrait'=>$retrait->id] )}}" method="POST" novalidate="novalidate">
+                          <form   action="{{  route('retraits.update', ['demande' => $retrait->demande->id,'retrait'=>$retrait->id])}}" method="POST" novalidate="novalidate">
                             {{ csrf_field() }}
                             <input type="hidden" name="_method" value="PUT">
                             <div class="row">
                               <div class="col-6">
                                  <div class="form-group has-success">
                                      <label >Nom :
-                                     <input style="" type="text" class="form-control" name="Nom" placeholder="Nom d'etudiant">
+                                     <input style="" type="text" class="form-control" name="Nom" value="{{ old('Nom', $retrait->demande->Nom)}}">
                                      <small id="" class="form-text text-muted"></small>
                                   </div>
                               </div>
                               <div class="col-6">
                               <div class="form-group">
                                 <label >Prénom :
-                                  <input style="" type="text" class="form-control" name="Prénom" placeholder="Prénom d'etudiant">
+                                  <input style="" type="text" class="form-control" name="Prénom" value="{{ old('Nom', $retrait->demande->Prénom)}}">
 
                                   <small id="" class="form-text text-muted"></small>
                                 </div>
@@ -53,14 +53,14 @@
                                      <div class="col-6">
                                         <div class="form-group has-success">
                                             <label >CNE :
-                                            <input style="" type="text" class="form-control" name="CNE" placeholder="CNE d'etudiant">
+                                            <input style="" type="text" class="form-control" name="CNE" value="{{ old('Nom', $retrait->demande->CNE)}}">
                                             <small id="" class="form-text text-muted"></small>
                                          </div>
                                      </div>
                                      <div class="col-6">
                                           <div class="form-group">
                                          <label >Apogée :
-                                        <input style=""type="text" class="form-control" name="Apogée" placeholder="apogée d'etudiant">
+                                        <input style=""type="text" class="form-control" name="Apogée" value="{{ old('Nom', $retrait->demande->Apogée)}}">
                                            <small id="" class="form-text text-muted"></small>
                                        </div>
                                 </div>
@@ -81,7 +81,7 @@
                                   </div>
                                   <div class="col-6">
                                     <label >Anneé scolarité :
-                                      <input style="margin-left: 1px; " type="text" name="Année_scolarité" class="form-control" id="" placeholder="date">
+                                      <input style="margin-left: 1px; " type="text" name="Année_scolarité" class="form-control" value="{{ old('Nom', $retrait->demande->Année_scolarité)}}">
                                       <small id="" class="form-text text-muted"></small>
                                       </div>
 
@@ -93,7 +93,7 @@
                               <div class="form-group">
                                 <div class="col-9">
 
-                                <div class="radio"  >
+                                <div class="radio"  value="{{ old('Nom', $retrait->demande->Type_retrait)}}" >
                                   <label>
                                     <input class="flat" type="radio" name="Type_retrait"value="Temporaire" checked> Retrait temporaire
                                   </label>

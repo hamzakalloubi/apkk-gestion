@@ -92,6 +92,7 @@ class RemiseController extends Controller
     public function edit($remise,$demande){
        
         $remise = Remise::find($remise)->first();
+     
 
         return view('remises.edit',[
             
@@ -131,6 +132,7 @@ class RemiseController extends Controller
      
 
         $demande = Demande::findOrFail($demande)->first();
+        
         $demande->Nom = $request->input('Nom');
         $demande->Prénom = $request->input('Prénom');
         $demande->CNE = $request->input('CNE');
@@ -147,7 +149,7 @@ class RemiseController extends Controller
 
         $remise->save();
 
-
+       
         return redirect()->back();
         
     }
@@ -157,6 +159,7 @@ class RemiseController extends Controller
      
 
         $demande = Demande::findOrFail($demande)->first();
+
 
         $demande->delete();
 

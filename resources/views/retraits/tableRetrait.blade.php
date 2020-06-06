@@ -81,7 +81,6 @@
 									<td class="cell100 column16">{{$retrait->demande->situation}}</td>
 									<td class="cell100 column17">
 
-
 										<form  style="display: inline-block;"  action="{{route('retraits.edit',['retrait'=>$retrait->id, 'demande'=>$retrait->demande->id])}}">
 											@csrf
 

@@ -32,7 +32,6 @@
 						<div class="col-2">
 
 
-							</script>
 
 
 							<div class="btn-group mb-2">
@@ -125,7 +124,7 @@
 												 </button>
 											  </form>
 										</td>
-
+										</tr>
 
 										@endforeach
 

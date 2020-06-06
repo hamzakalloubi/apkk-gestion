@@ -2,10 +2,7 @@
 
 @section('content')
 <div style="padding:100px" class="container">
-<<<<<<< HEAD
-=======
 
->>>>>>> d8bc49126d1498749a901a179e93e56d739e20de
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
