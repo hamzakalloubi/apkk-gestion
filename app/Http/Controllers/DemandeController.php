@@ -72,6 +72,7 @@ class DemandeController extends Controller
        
 
         $retrait->save();
+        session()->flash('success', 'La demande est bien enregistrée!');
 
         return redirect()->back();  
 
@@ -79,8 +80,8 @@ class DemandeController extends Controller
     }
     public function edit($retrait,$demande){
        
-        $retrait = Retrait::find($retrait)->first();
-        dd($retrait);
+        $retrait = Retrait::where('id','=',$retrait)->first();
+        
 
         return view('retraits.edit',[
             
@@ -111,7 +112,7 @@ class DemandeController extends Controller
 public function update( Request $request, $retrait, $demande){
      
 
-        $demande = Demande::findOrFail($demande)->first();
+        $demande = Demande::where('id','=',$demande)->first();
         $demande->Nom = $request->input('Nom');
         $demande->Prénom = $request->input('Prénom');
         $demande->CNE = $request->input('CNE');
@@ -121,15 +122,17 @@ public function update( Request $request, $retrait, $demande){
 
         $demande->save();
    
-        $retrait = Retrait::findOrFail($retrait)->first();
+        $retrait = Retrait::where('id','=',$retrait)->first();
         $retrait->dateretrait = $request->input('dateretrait');
         $retrait->situationretrait = $request->input('situationretrait');
         $retrait->demande_id=$demande->id;
 
         $retrait->save();
 
-
+        session()->flash('success', 'La demande est bien modifié ');
         return redirect()->back();
+
+        
         
     }
 
@@ -137,11 +140,12 @@ public function destroy(Request $request, $retrait, $demande){
 
      
 
-        $demande = Demande::findOrFail($demande)->first();
+        $demande = Demande::where('id','=',$demande)->first();
 
 
         $demande->delete();
 
+        session()->flash('delete', 'LA demande est suprimmé!!');
 
         return redirect()->back();
         

@@ -23,13 +23,18 @@
 	<link rel="stylesheet" type="text/css" href="/css3/main.css">
 <!--===============================================================================================-->
 </head>
+@if(session()->has('delete'))
+  <div class="alert alert-danger">
+{{session()->get('delete')}}
+</div>
 
+@endif
 	
 	<div class="limiter">
 		<div class="container-table100">
 			<div class="wrap-table100">
 				<!-- Small button groups (default and split) -->
-				<div class="row justify-content-end">
+				<div class="row justify-content-end" style="background-color: whitesmoke;">
 					<div class="col-2">
 						<div class="btn-group mb-2">
 							<button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -84,7 +89,7 @@
 										<form  style="display: inline-block;"  action="{{route('retraits.edit',['retrait'=>$retrait->id, 'demande'=>$retrait->demande->id])}}">
 											@csrf
 
-											<button  type="submit" class="btn btn-lg" style="background-color:transparent;padding: 0;">
+											<button  type="submit" class="btn btn-lg" style="background-color:transparent;padding: 0;" title="Modifier">
 												<i class="far fa-edit" style="color: black;"></i> 
 											 </button>
 										  </form>
@@ -94,7 +99,7 @@
 										  <form  style="display: inline-block;" method="POST" action="{{route('retraits.valid',$retrait->demande->id)}}">
 											@csrf
 
-											<button  type="submit" class="btn btn-lg" style="background-color:transparent;padding: 0;">
+											<button  type="submit" class="btn btn-lg" style="background-color:transparent;padding: 0;" title="Validée">
 												<i class="far fa-check-square" style="color: green;"></i> 
 											 </button>
 										  </form>
@@ -104,7 +109,7 @@
 											@csrf
 											@method('PUT')
 										
-											<button  type="submit" class="btn btn-lg" style="background-color:transparent; padding: 0;">
+											<button  type="submit" class="btn btn-lg" style="background-color:transparent; padding: 0;" title="Refusée">
 												<i class="far fa-times-circle" style="color: black;"></i> 
 											 </button>
 											
@@ -115,7 +120,7 @@
 											<form id="delete-form" style="display: inline-block;" method="POST" action="{{route('retraits.destroy',['retrait'=>$retrait->id, 'demande'=>$retrait->demande->id])}}">
 												@csrf
 												@method('DELETE')
-												<button  type="submit" class="btn btn-lg" style="background-color:transparent; padding: 0;">
+												<button  type="submit" class="btn btn-lg" style="background-color:transparent; padding: 0;" title="suprimmé">
 													<i class="far fa-trash-alt" style="color: red;"></i> 
 												 </button>
 											  </form>

@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Remise;
 use App\Retrait;
 use App\Demande;
+use App\Mail\ValidMail;
+use Illuminate\Support\Facades\Mail;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,6 +31,9 @@ Route::get('/app', function () {
 
 Route::get('/index', function () {
     return view('index');
+});
+Route::get('/indexe', function () {
+    return view('indexe');
 });
 
 Route::get('/tableRemise', function () {
@@ -77,3 +83,8 @@ Route::resource('/demandes', 'DemandeController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/email', function(){
+    Mail::to('email@email.com')->send(new ValidMail());
+    return new ValidMail();
+});

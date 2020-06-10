@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\MAil;
 use Illuminate\Http\Request;
 use App\Demande;
 use App\Remise;
@@ -72,6 +72,8 @@ class RemiseController extends Controller
 
         $remise->save();
 
+        session()->flash('success', 'La demande est bien enregistrée');
+
         return redirect()->back();  
     }
 
@@ -91,7 +93,7 @@ class RemiseController extends Controller
     }
     public function edit($remise,$demande){
        
-        $remise = Remise::find($remise)->first();
+        $remise = Remise::where('id','=',$remise)->first();
      
 
         return view('remises.edit',[
@@ -116,6 +118,7 @@ class RemiseController extends Controller
         $demande->situation = "validée";
         $demande->save();
         return redirect()->back();
+
     }
     
     public function refuse($demande){
@@ -131,7 +134,7 @@ class RemiseController extends Controller
     public function update( Request $request, $remise, $demande){
      
 
-        $demande = Demande::findOrFail($demande)->first();
+        $demande = Demande::where('id','=',$demande)->first();
         
         $demande->Nom = $request->input('Nom');
         $demande->Prénom = $request->input('Prénom');
@@ -142,12 +145,13 @@ class RemiseController extends Controller
 
         $demande->save();
    
-        $remise = Remise::findOrFail($remise)->first();
+        $remise = Remise::where('id','=',$remise)->first();
         $remise->dateremise = $request->input('dateremise');
         $remise->situationremise = $request->input('situationremise');
         $remise->demande_id=$demande->id;
 
         $remise->save();
+        session()->flash('success', 'La demande est bien modifié ');
 
        
         return redirect()->back();
@@ -158,12 +162,12 @@ class RemiseController extends Controller
 
      
 
-        $demande = Demande::findOrFail($demande)->first();
+        $demande = Demande::where('id','=',$demande)->first();
 
 
         $demande->delete();
 
-
+        session()->flash('delete', 'LA demande est suprimmé!!');
         return redirect()->back();
         
     }

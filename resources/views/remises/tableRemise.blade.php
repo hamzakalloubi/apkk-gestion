@@ -23,12 +23,24 @@
 	<link rel="stylesheet" type="text/css" href="/css3/main.css">
 <!--===============================================================================================-->
 </head>
+
+@if(session()->has('delete'))
+  <div class="alert alert-danger">
+{{session()->get('delete')}}
+</div>
+
+@endif
+	
 <body>
+
+	
+	
+
 	<div class="limiter">
 		<div class="container-table100">
 			<div class="wrap-table100">
 				<!-- Small button groups (default and split) -->
-					<div class="row justify-content-end">
+					<div class="row justify-content-end" style="background-color: whitesmoke;">
 						<div class="col-2">
 
 
@@ -52,6 +64,7 @@
 							</div>
 						</div>
 					</div>
+				
 
 					
 					<div class="row">
