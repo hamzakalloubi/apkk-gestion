@@ -84,7 +84,16 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+<<<<<<< HEAD
 Route::get('/email', function(){
     Mail::to('email@email.com')->send(new ValidMail());
     return new ValidMail();
 });
+=======
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
+/*Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');*/
+
+>>>>>>> 30e0e9aafc1b5ef24a2a1661af5e147154bfca27

@@ -21,15 +21,15 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
-
-            $table->integer('typeuser_id')->unsigned();
+            $table->string("Type_user")->fillable();
+            //$table->integer('typeuser_id')->unsigned();
 
         });
-        Schema::table('users', function($table) {
+       /* Schema::table('users', function($table) {
             $table->foreign('typeuser_id')
             ->references('id')
             ->on('typeusers');
-        });
+        });*/
     }
 
     /**

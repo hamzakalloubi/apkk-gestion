@@ -80,7 +80,11 @@ class DemandeController extends Controller
     }
     public function edit($retrait,$demande){
        
+<<<<<<< HEAD
         $retrait = Retrait::where('id','=',$retrait)->first();
+=======
+        $retrait = Retrait::find($retrait)->first();
+>>>>>>> 30e0e9aafc1b5ef24a2a1661af5e147154bfca27
         
 
         return view('retraits.edit',[

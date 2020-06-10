@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 <!doctype html>
+=======
+
+<!DOCTYPE html>
+>>>>>>> 30e0e9aafc1b5ef24a2a1661af5e147154bfca27
 <html lang="en">
   <head>
   	<title>Gestion de scolarité</title>
@@ -66,5 +71,14 @@
     <script src="/js5/bootstrap.min.js"></script>
     <script src="/js5/main.js"></script>
     <script src="{{ mix('/js/app.js') }}"></script>
+<<<<<<< HEAD
   </body>
 </html>
+=======
+
+</body>
+
+</html>
+<!-- end document-->
+
+>>>>>>> 30e0e9aafc1b5ef24a2a1661af5e147154bfca27
