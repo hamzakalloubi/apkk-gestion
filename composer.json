@@ -13,13 +13,9 @@
         "fruitcake/laravel-cors": "^1.0",
         "guzzlehttp/guzzle": "^6.3",
         "laravel/framework": "^7.0",
-<<<<<<< HEAD
         "laravel/tinker": "^2.0",
         "yajra/laravel-datatables": "1.5",
         "yajra/laravel-datatables-oracle": "~9.0"
-=======
-        "laravel/tinker": "^2.0"
->>>>>>> d8bc49126d1498749a901a179e93e56d739e20de
     },
     "require-dev": {
         "facade/ignition": "^2.0",

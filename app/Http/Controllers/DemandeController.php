@@ -80,7 +80,7 @@ class DemandeController extends Controller
     public function edit($retrait,$demande){
        
         $retrait = Retrait::find($retrait)->first();
-        dd($retrait);
+        
 
         return view('retraits.edit',[
             

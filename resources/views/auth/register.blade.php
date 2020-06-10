@@ -1,7 +1,7 @@
-@extends('index')
+@extends('layouts.app')
 
 @section('content')
-<div style="padding:100px" class="container">
+<div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -60,6 +60,22 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
+
+                        <div class="form-group">
+                                <div class="col-9">
+                                    <div class="radio"  >
+                                  <label>
+                                    <input class="flat" type="radio" name="Type_user" value="Scolarité" checked>Scolarité
+                                  </label>
+                                </div>
+                                <div class="radio" style="display: inline-block;">
+                                  <label>
+                                    <input class="flat" type="radio" name="Type_user"  value="Appogée"> Appogée
+                                  </label>
+                                </div>
+                            </div>
+                            </div>
+
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
