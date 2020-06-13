@@ -61,25 +61,25 @@
                             </div>
                         </div>
 
-<<<<<<< HEAD
-                          <div class="radio">
-=======
-                        <div class="form-group">
-                                <div class="col-9">
-                                    <div class="radio"  >
-                                  <label>
-                                    <input class="flat" type="radio" name="Type_user" value="Scolarité" checked>Scolarité
-                                  </label>
-                                </div>
-                                <div class="radio" style="display: inline-block;">
-                                  <label>
-                                    <input class="flat" type="radio" name="Type_user"  value="Appogée"> Appogée
-                                  </label>
-                                </div>
-                            </div>
-                            </div>
 
->>>>>>> 30e0e9aafc1b5ef24a2a1661af5e147154bfca27
+                          <div class="radio">
+
+
+<div class="form-group">
+    <div class="col-9">
+        <div class="radio"  >
+      <label>
+        <input class="flat" type="radio" name="Type_user" value="Scolarité" checked>Scolarité
+      </label>
+    </div>
+    <div class="radio" style="display: inline-block;">
+      <label>
+        <input class="flat" type="radio" name="Type_user"  value="Appogée"> Appogée
+      </label>
+    </div>
+</div>
+</div>
+
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">

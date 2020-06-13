@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -18,15 +17,16 @@
 
     <link href="{{asset('/css1/font-face.css')}}" rel="stylesheet" media="all"/>
     <link href="{{asset('/fonts3/font-awesome-4.7.0/css/font-awesome.min.css')}}" rel="stylesheet" media="all"/>
-   <!-- <link href="/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all"/>-->
+    <link href="/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all"/>
     <link href="/vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all"/>
    
     <link href="{{asset('/vendor/mdi-font/css/material-design-iconic-font.min.css')}}" rel="stylesheet" media="all"/>
+  
   </head>
   <body>
 		
 		<div class="wrapper d-flex align-items-stretch">
-			<nav id="sidebar">
+			<nav id="sidebar" style="background: #649173; ">
 				<div class="custom-menu">
 					<button type="button" id="sidebarCollapse" class="btn btn-primary">
 	        </button>
@@ -38,27 +38,10 @@
 	  			</div>
 	  		</div>
         <ul class="list-unstyled components mb-5">
-          @can('IsScolarité')
-          <li class="active">
-            	
-            <a href="{{ route('retraits.create') }}"><span class="fa fa-wpforms mr-3"></span> Formulaire retrait</a>
-          </li>
-         
-          <li>
-            <a href="{{ route('remises.create') }}"><span class="fa fa-wpforms mr-3"></span> Formulaire remise</a>
-          </li>
-          <li>
-            <a href="{{ url('/tableRetrait')}}"><span class="fa fa-clock-o mr-3"></span> Demande retrait</a>
-          </li>
-         @endcan
-         
-         
-         @if(Gate::check('IsScolarité') || Gate::check('IsAppogée'))
+          
           <li>
             <a href="{{ url('/tableRemise')}}"><span class="fa fa-thumbs-o-up mr-3"></span> Demande remise</a>
           </li>
-          @endif
-       
           <li>
             <a href="{{ route('logout') }}"
             onclick="event.preventDefault();
@@ -87,4 +70,13 @@
     <script src="/js5/main.js"></script>
     <script src="{{ mix('/js/app.js') }}"></script>
   </body>
-  </html>
+</html>
+
+
+<!--<style>
+    .ayoub{
+        background: #649173;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #DBD5A4, #649173);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #DBD5A4, #649173); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        }
+      </style>-->

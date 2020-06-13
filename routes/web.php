@@ -21,9 +21,11 @@ use Illuminate\Support\Facades\Mail;
 /*Route::get('/', function () {
     return view('welcome');
 });*/
-
-Route::get('/FormRet', function () {
-    return view('FormRet');
+Route::get('/register2', function () {
+    return view('layouts/register2');
+});
+Route::get('/login2', function () {
+    return view('layouts/login2');
 });
 Route::get('/app', function () {
     return view('layouts.app');
@@ -32,34 +34,78 @@ Route::get('/app', function () {
 Route::get('/index', function () {
     return view('index');
 });
+Route::get('/index2', function () {
+    return view('index2');
+});
 Route::get('/indexe', function () {
     return view('indexe');
 });
 
-Route::get('/tableRemise', function () {
-    $remises = Remise::with('demande')->get();
-    return view('remises.tableRemise', ['remises'=>$remises]);
-});
-
-Route::get('/tableRetrait', function () {
-    $retraits = Retrait::with('demande')->get();
-    return view('retraits.tableRetrait', ['retraits'=>$retraits]);
-});
 
 Route::get('/edit', function () {
     $remises = Remise::with('demande')->get();
     return view('remises.edit', ['remises'=>$remises]);
 });
-Route::get('/edit', function () {
-    $retraits= Retrait::with('demande')->get();
-    return view('retraits.edit', ['retraits'=>$retraits]);
+
+
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/email', function(){
+    Mail::to('email@email.com')->send(new ValidMail());
+    return new ValidMail();
 });
 
-Route::get('/valid', function () {
-    $remises= Demande::with('demande')->get();
-    return view('remises.valid', ['remises'=>$remises]);
+
+Route::get('/tableRemise', function () {
+        $remises = Remise::with('demande')->get();
+        return view('remises.tableRemise', ['remises'=>$remises]);
+    });
+
+
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
+/*Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');*/
+
+
+Route::middleware('can:IsAppogée')->group(function() {
+
+
+
+    
+    Route::resource('/remises', 'RemiseController');
+    Route::post('/remises/{demande}/valid','RemiseController@valid')->name('remises.valid');
+Route::put('/remises/{demande}/refuse','RemiseController@refuse')->name('remises.refuse');
+
 });
 
+
+
+
+Route::middleware('can:IsScolarité')->group(function() {
+
+    Route::get('/FormRet', function () {
+        return view('FormRet');
+    });
+
+    Route::get('/tableRetrait', function () {
+        $retraits = Retrait::with('demande')->get();
+        return view('retraits.tableRetrait', ['retraits'=>$retraits]);
+    });
+
+
+
+    Route::get('/edit', function () {
+        $retraits= Retrait::with('demande')->get();
+        return view('retraits.edit', ['retraits'=>$retraits]);
+    });
+
+    Route::resource('/demandes', 'DemandeController');
 Route::resource('/retraits', 'DemandeController');
 Route::get('/retraits/{retrait}/{demande}/edit','DemandeController@edit')->name('retraits.edit');
 Route::put('/retraits/{retrait}/{demande}/edit','DemandeController@update')->name('retraits.update');
@@ -68,32 +114,12 @@ Route::post('/retraits/{demande}/valid','DemandeController@valid')->name('retrai
 Route::put('/retraits/{demande}/refuse','DemandeController@refuse')->name('retraits.refuse');
 
 
+
+
 Route::resource('/remises', 'RemiseController');
+
 Route::get('/remises/{remise}/{demande}/edit','RemiseController@edit')->name('remises.edit');
 Route::put('/remises/{remise}/{demande}/edit','RemiseController@update')->name('remises.update');
 Route::delete('/remises/{remise}/{demande}/edit','RemiseController@destroy')->name('remises.destroy');
-Route::post('/remises/{demande}/valid','RemiseController@valid')->name('remises.valid');
-Route::put('/remises/{demande}/refuse','RemiseController@refuse')->name('remises.refuse');
 
-
-Route::resource('/demandes', 'DemandeController');
-
-
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-<<<<<<< HEAD
-Route::get('/email', function(){
-    Mail::to('email@email.com')->send(new ValidMail());
-    return new ValidMail();
 });
-=======
-Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
-
-/*Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');*/
-
->>>>>>> 30e0e9aafc1b5ef24a2a1661af5e147154bfca27

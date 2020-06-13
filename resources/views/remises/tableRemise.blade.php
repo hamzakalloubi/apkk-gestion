@@ -1,3 +1,4 @@
+<!--@extends(Auth::user()->Type_user === 'Scolarité' ? 'index' : (Auth::user()->Type_user === 'Appogée' ? 'index2' : 'index3' )  )-->
 @extends('index')
 @section('content')
   
@@ -6,6 +7,7 @@
 	<title>Table V04</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="/icons/schedule.png" />
 <!--===============================================================================================-->	
 	<link rel="icon" type="image/png" href="/images3/icons/favicon.ico"/>
 <!--===============================================================================================-->
@@ -97,45 +99,45 @@
 											<td class="cell100 column5">{{$remise->demande->situation}}</td>
 
 										<td class="cell100 column6">
-										
 
-											<form  style="display: inline-block;"  action="{{route('remises.edit',['remise'=>$remise->id, 'demande'=>$remise->demande->id])}}">
-												@csrf
-
-												<button  type="submit" class="btn btn-lg" style="background-color:transparent;padding: 0;">
-													<i class="far fa-edit" style="color: black;"></i> 
-												 </button>
-											  </form>
-
-
-
-
+											@can('IsAppogée')	
 											<form  style="display: inline-block;" method="POST" action="{{route('remises.valid',$remise->demande->id)}}">
 												@csrf
-
 												<button  type="submit" class="btn btn-lg" style="background-color:transparent;padding: 0;">
 													<i class="far fa-check-square" style="color: green;"></i> 
 												 </button>
-											  </form>
-
-											  <form id="delete-form" style="display: inline-block;" method="POST" action="{{route('remises.refuse',['remise'=>$remise->id, 'demande'=>$remise->demande->id])}}">
-												@csrf
-												@method('PUT')
-											
-												<button  type="submit" class="btn btn-lg" style="background-color:transparent; padding: 0;">
-													<i class="far fa-times-circle" style="color: black;"></i> 
-												 </button>
+											</form>
 												
-											  </form>
-											
+												 <form id="delete-form" style="display: inline-block;" method="POST" action="{{route('remises.refuse',['remise'=>$remise->id, 'demande'=>$remise->demande->id])}}">
+													@csrf
+													@method('PUT')
+												
+													<button  type="submit" class="btn btn-lg" style="background-color:transparent; padding: 0;">
+														<i class="far fa-times-circle" style="color: black;"></i> 
+													 </button>
+													
+												  </form>
 
-											<form id="delete-form" style="display: inline-block;" method="POST" action="{{route('remises.destroy',['remise'=>$remise->id, 'demande'=>$remise->demande->id])}}">
-												@csrf
-												@method('DELETE')
-												<button  type="submit" class="btn btn-lg" style="background-color:transparent; padding: 0;">
-													<i class="far fa-trash-alt" style="color: red;"></i> 
-												 </button>
-											  </form>
+												  
+
+                 								   @else()
+													<form id="delete-form" style="display: inline-block;" method="POST" action="{{route('remises.destroy',['remise'=>$remise->id, 'demande'=>$remise->demande->id])}}">
+														@csrf
+														@method('DELETE')
+														<button  type="submit" class="btn btn-lg" style="background-color:transparent; padding: 0;">
+															<i class="far fa-trash-alt" style="color: red;"></i> 
+														 </button>
+													  </form>
+
+													  <form  style="display: inline-block;"  action="{{route('remises.edit',['remise'=>$remise->id, 'demande'=>$remise->demande->id])}}">
+														@csrf
+		
+														<button  type="submit" class="btn btn-lg" style="background-color:transparent;padding: 0;">
+															<i class="far fa-edit" style="color: black;"></i> 
+														 </button>
+													  </form>
+                  									  @endcan
+												
 										</td>
 										</tr>
 
@@ -175,9 +177,4 @@
 		
 	</script>
 <!--===============================================================================================-->
-	<script src="/js3/main.js"></script>
-
-
-
-
-@endsection
+	<script src="/js3/main.js"></script>@endsection
