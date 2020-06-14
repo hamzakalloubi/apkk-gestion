@@ -21,6 +21,12 @@ use Illuminate\Support\Facades\Mail;
 /*Route::get('/', function () {
     return view('welcome');
 });*/
+
+Route::get('/homeIn', function () {
+    return view('homeIn');
+});
+
+
 Route::get('/register2', function () {
     return view('layouts/register2');
 });

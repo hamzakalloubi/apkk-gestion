@@ -11,17 +11,11 @@
 		
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css5/style.css">
-    <link href="../vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all"/>
+    <link href="{{asset('/vendor3/bootstrap-4.1/bootstrap.min.css')}}" rel="stylesheet" media="all"/>
     
     <link rel="stylesheet" href="{{mix('/css/app.css')}}">
     <link rel="stylesheet" href="{{mix('/css/theme.css')}}">
-
-    <link href="{{asset('/css1/font-face.css')}}" rel="stylesheet" media="all"/>
-    <link href="{{asset('/fonts3/font-awesome-4.7.0/css/font-awesome.min.css')}}" rel="stylesheet" media="all"/>
-   <!-- <link href="/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all"/>-->
-    <link href="/vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all"/>
-   
-    <link href="{{asset('/vendor/mdi-font/css/material-design-iconic-font.min.css')}}" rel="stylesheet" media="all"/>
+  
   </head>
   <body>
 		
@@ -31,12 +25,12 @@
 					<button type="button" id="sidebarCollapse" class="btn btn-primary">
 	        </button>
         </div>
-	  		<div class="img bg-wrap text-center py-4" style="background-image: url(/icons/log.jpg);">
+	  		<a href="{{ url('/homeIn')}}"><div class="img bg-wrap text-center py-4" style="background-image: url(/icons/log.jpg);" >
 	  			<div class="user-logo">
 	  				<div class="img" style="background-image: url(../images/icon/fp.jpg);"></div>
 	  				<h3></h3>
 	  			</div>
-	  		</div>
+	  		</div></a>
         <ul class="list-unstyled components mb-5">
           @can('IsScolarité')
           <li class="active">
@@ -88,3 +82,15 @@
     <script src="{{ mix('/js/app.js') }}"></script>
   </body>
   </html>
+
+
+  <!-- 
+     <link href="{{asset('/vendor3/mdi-font/css/material-design-iconic-font.min.css')}}" rel="stylesheet" media="all"/>
+    <link href="{{asset('/css1/font-face.css')}}" rel="stylesheet" media="all"/>
+    <link href="{{asset('/css5/style.css')}}" rel="stylesheet" media="all"/>
+    <link href="{{asset('/vendor3/font-awesome-4.7/css/font-awesome.min.css')}}" rel="stylesheet" media="all"/>
+
+
+      fonts font barre  
+    <link href="{{asset('/fonts3/font-awesome-4.7.0/css/font-awesome.min.css')}}" rel="stylesheet" media="all"/>
+ -->
