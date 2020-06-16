@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link rel="stylesheet" href="{{mix('/css/app.css')}}">
-<link rel="stylesheet" href="{{mix('/css/theme.css')}}">
+
 
     <title>Retrait</title>
 </head>
@@ -79,10 +78,10 @@
                                   <div class="col-6">
                                       <div class="form-group">
                                         <label >Diplome :
-                                          <select name="select" name="Diplome" class="form-control">
-                                            <option value="Bacalauriat">Bacalauriat</option>
+                                          <select  name="diplome" class="form-control">
+                                            <option value="Baccalauréat">Baccalauréat</option>
                                             <option value="Deug">Deug</option>
-                                            <option value="Licence">Licence</option>
+                                            <option value="Licence ">Licence </option>                       
                                             <option value="Master">Master</option>
                                         </select>
                                       </div>

@@ -23,6 +23,7 @@ class CreateDemandesTable extends Migration
             $table->date('datedemande')->nullable();
             $table->string('Année_scolarité');
             $table->string('situation')->default('en cours')->nullable();
+            $table->string('diplome');
 
 
 

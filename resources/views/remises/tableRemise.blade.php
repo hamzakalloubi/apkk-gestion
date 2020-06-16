@@ -14,8 +14,8 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="/vendor3/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
-    <!--<link rel="stylesheet" type="text/css" href="/fonts3/font-awesome-4.7.0/css/font-awesome.min.css">-->
-	<link href="{{asset('/vendor3/font-awesome-5/css/fontawesome-all.min.css')}}" rel="stylesheet" media="all"/>
+    <!--<link rel="stylesheet" type="text/css" href="/fonts3/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link href="{{asset('/vendor3/font-awesome-5/css/fontawesome-all.min.css')}}" rel="stylesheet" media="all"/>-->
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="/vendor3/animate/animate.css">
 <!--===============================================================================================-->
@@ -81,9 +81,10 @@
 											<th class="cell100 column1">CNE</th>	
 											<th class="cell100 column2">Nom</th>
 											<th class="cell100 column3">Prénom</th>
-											<th class="cell100 column4">Apogée</th>										
-											<th class="cell100 column5">Situation</th>
-											<th class="cell100 column6">Modification</th>
+											<th class="cell100 column4">Apogée</th>	
+											<th class="cell100 column5">Diplome</th>										
+											<th class="cell100 column6">Situation</th>
+											<th class="cell100 column7">Modification</th>
 										</tr>
 									</thead>
 								</table>
@@ -98,14 +99,15 @@
 											<td class="cell100 column2">{{$remise->demande->Nom}}</td>
 											<td class="cell100 column3">{{$remise->demande->Prénom}}</td>								
 											<td class="cell100 column4">{{$remise->demande->Apogée}}</td>
-											<td class="cell100 column5">{{$remise->demande->situation}}</td>
+											<td class="cell100 column5">{{$remise->demande->diplome}}</td>
+											<td class="cell100 column6">{{$remise->demande->situation}}</td>
 
-										<td class="cell100 column6">
+										<td class="cell100 column7">
 
 											@can('IsAppogée')	
 											<form  style="display: inline-block;" method="POST" action="{{route('remises.valid',$remise->demande->id)}}">
 												@csrf
-												<button  type="submit" class="btn btn-lg" style="background-color:transparent;padding: 0;">
+												<button  type="submit" class="btn btn-lg" style="background-color:transparent;padding: 0;" title="Validée">
 													<i class="far fa-check-square" style="color: green;"></i> 
 												 </button>
 											</form>
@@ -114,7 +116,7 @@
 													@csrf
 													@method('PUT')
 												
-													<button  type="submit" class="btn btn-lg" style="background-color:transparent; padding: 0;">
+													<button  type="submit" class="btn btn-lg" style="background-color:transparent; padding: 0;" title="Refusée">
 														<i class="far fa-times-circle" style="color: black;"></i> 
 													 </button>
 													
@@ -123,19 +125,22 @@
 												  
 
                  								   @else()
-													<form id="delete-form" style="display: inline-block;" method="POST" action="{{route('remises.destroy',['remise'=>$remise->id, 'demande'=>$remise->demande->id])}}">
-														@csrf
-														@method('DELETE')
-														<button  type="submit" class="btn btn-lg" style="background-color:transparent; padding: 0;">
-															<i class="far fa-trash-alt" style="color: red;"></i> 
-														 </button>
-													  </form>
+													
 
 													  <form  style="display: inline-block;"  action="{{route('remises.edit',['remise'=>$remise->id, 'demande'=>$remise->demande->id])}}">
 														@csrf
 		
-														<button  type="submit" class="btn btn-lg" style="background-color:transparent;padding: 0;">
+											<button  type="submit" class="btn btn-lg" style="background-color:transparent;padding: 0;" title="Modifier">
+												
 															<i class="far fa-edit" style="color: black;"></i> 
+														 </button>
+													  </form>
+
+													  <form id="delete-form" style="display: inline-block;" method="POST" action="{{route('remises.destroy',['remise'=>$remise->id, 'demande'=>$remise->demande->id])}}">
+														@csrf
+														@method('DELETE')
+														<button  type="submit" class="btn btn-lg" style="background-color:transparent; padding: 0;" title="suprimmé">
+															<i class="far fa-trash-alt" style="color: red;"></i> 
 														 </button>
 													  </form>
                   									  @endcan

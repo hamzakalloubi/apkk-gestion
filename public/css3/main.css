@@ -191,54 +191,58 @@ th, td {
 }
 
 .column1 {
-  width: 17%;
+  width: 14%;
   padding-left: 40px;
 }
 
 .column2 {
-  width: 17%;
+  width: 14%;
 }
 
 .column3 {
-  width: 17%;
+  width: 14%;
 }
 
 .column4 {
-  width: 17%;
+  width: 14%;
 }
 
 .column5 {
-  width: 17%;
+  width: 14%;
 }
 .column6 {
-  width: 15%;
+  width: 14%;
 }
-
-.column11 {
+.column7 {
   width: 16%;
+}
+.column11 {
+  width: 12%;
   padding-left: 40px;
 }
 
 .column12 {
-  width: 14%;
+  width: 12%;
 }
 
 .column13 {
-  width: 14%;
+  width: 12%;
 }
 
 .column14 {
-  width: 14%;
+  width: 12%;
 }
-
 .column15 {
-  width: 14%;
+  width: 12%;
 }
 .column16 {
-  width: 14%;
+  width: 12%;
 }
 .column17 {
-  width: 14%;
+  width: 12%;
+}
+.column18 {
+  width: 16%;
 }
 
 .table100-head th {

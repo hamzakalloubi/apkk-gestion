@@ -55,6 +55,7 @@ class RemiseController extends Controller
         $demande->Prénom = $request->input('Prénom');
         $demande->CNE = $request->input('CNE');
         $demande->Apogée = $request->input('Apogée');
+        $demande->diplome = $request->input('diplome');
         //$demande->diplome_id = $request->input('diplome_id');
         $demande->Année_scolarité = $request->input('Année_scolarité');
         
@@ -140,6 +141,7 @@ class RemiseController extends Controller
         $demande->Prénom = $request->input('Prénom');
         $demande->CNE = $request->input('CNE');
         $demande->Apogée = $request->input('Apogée');
+        $demande->diplome = $request->input('diplome');
         //$demande->diplome_id = $request->input('diplome_id');
         $demande->Année_scolarité= $request->input('Année_scolarité');
 

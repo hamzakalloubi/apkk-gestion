@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link rel="stylesheet" href="{{mix('/css/app.css')}}">
-<link rel="stylesheet" href="{{mix('/css/theme.css')}}">
+
 
     <title>Remise</title>
 </head>
@@ -77,17 +76,17 @@
                                 </div>
                                    </div>
 
-                              <div class="row">
-                                  <div class="col-6">
-                                      <div class="form-group">
-                                        <label >Diplome :
-                                          <select name="select" name="Diplome" class="form-control">
-                                            <option value="1" >bacalauriat</option>
-                                            <option value="2">deug</option>
-                                            <option value="3">Licence</option>
-                                            <option value="2">Master</option>
-                                        </select>
-                                      </div>
+                                   <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                          <label >Diplome :
+                                            <select  name="diplome" class="form-control" value="{{ old('diplome', $remise->demande->diplome)}}">
+                                              <option value="Baccalauréat">Baccalauréat</option>
+                                              <option value="Deug">Deug</option>
+                                              <option value="Licence ">Licence </option>                       
+                                              <option value="Master">Master</option>
+                                          </select>
+                                        </div>
 
                                   </div>
                                   <div class="col-6">

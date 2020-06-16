@@ -11,16 +11,10 @@
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css5/style.css">
     <link href="../vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all"/>
-    
-    <link rel="stylesheet" href="{{mix('/css/app.css')}}">
-    <link rel="stylesheet" href="{{mix('/css/theme.css')}}">
-
-    <link href="{{asset('/css1/font-face.css')}}" rel="stylesheet" media="all"/>
-    <link href="{{asset('/fonts3/font-awesome-4.7.0/css/font-awesome.min.css')}}" rel="stylesheet" media="all"/>
-    <link href="/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all"/>
-    <link href="/vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all"/>
-   
-    <link href="{{asset('/vendor/mdi-font/css/material-design-iconic-font.min.css')}}" rel="stylesheet" media="all"/>
+    <link rel="stylesheet" href="/css5/style.css">
+    <link href="{{asset('/vendor3/bootstrap-4.1/bootstrap.min.css')}}" rel="stylesheet" media="all"/>
+ <!---->
+<link href="{{asset('/vendor3/font-awesome-5/css/fontawesome-all.min.css')}}" rel="stylesheet" media="all"/>
   
   </head>
   <body>
@@ -68,7 +62,7 @@
     <script src="/js5/popper.js"></script>
     <script src="/js5/bootstrap.min.js"></script>
     <script src="/js5/main.js"></script>
-    <script src="{{ mix('/js/app.js') }}"></script>
+ 
   </body>
 </html>
 

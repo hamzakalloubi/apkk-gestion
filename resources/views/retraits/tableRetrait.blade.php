@@ -13,9 +13,9 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="/vendor3/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
-	<!--<link rel="stylesheet" type="text/css" href="/fonts3/font-awesome-4.7.0/css/font-awesome.min.css">-->
-	<link href="{{asset('/vendor3/font-awesome-5/css/fontawesome-all.min.css')}}" rel="stylesheet" media="all"/>
-	<link href="{{asset('/vendor3/bootstrap-4.1/bootstrap.min.css')}}" rel="stylesheet" media="all"/>
+	<!--<link rel="stylesheet" type="text/css" href="/fonts3/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link href="{{asset('/vendor3/font-awesome-5/css/fontawesome-all.min.css')}}" rel="stylesheet" media="all"/>-->
+	
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="/vendor3/animate/animate.css">
 <!--===============================================================================================-->
@@ -69,9 +69,10 @@
 									<th class="cell100 column12">Nom</th>
 									<th class="cell100 column13">Prénom</th>
 									<th class="cell100 column14">Apogée</th>
-									<th class="cell100 column15">Type retrait</th>
-									<th class="cell100 column16">Situation</th>			
-									<th class="cell100 column17">Modification</th>
+									<th class="cell100 column15">Diplome</th>
+									<th class="cell100 column16">Type retrait</th>
+									<th class="cell100 column17">Situation</th>			
+									<th class="cell100 column18">Modification</th>
 								</tr>
 							</thead>
 						</table>
@@ -86,11 +87,12 @@
 									<td class="cell100 column12">{{$retrait->demande->Nom}}</td>
 									<td class="cell100 column13">{{$retrait->demande->Prénom}}</td>								
 									<td class="cell100 column14">{{$retrait->demande->Apogée}}</td>
-									<td class="cell100 column14">{{$retrait->Type_retrait}}</td>
-									<td class="cell100 column16">{{$retrait->demande->situation}}</td>
-									<td class="cell100 column17">
+									<td class="cell100 column15">{{$retrait->demande->diplome}}</td>
+									<td class="cell100 column16">{{$retrait->Type_retrait}}</td>
+									<td class="cell100 column17">{{$retrait->demande->situation}}</td>
+									<td class="cell100 column18">
 
-										<form  style="display: inline-block;"  action="{{route('retraits.edit',['retrait'=>$retrait->id, 'demande'=>$retrait->demande->id])}}">
+									<form  style="display: inline-block;"  action="{{route('retraits.edit',['retrait'=>$retrait->id, 'demande'=>$retrait->demande->id])}}">
 											@csrf
 
 											<button  type="submit" class="btn btn-lg" style="background-color:transparent;padding: 0;" title="Modifier">
@@ -125,9 +127,10 @@
 												@csrf
 												@method('DELETE')
 												<button  type="submit" class="btn btn-lg" style="background-color:transparent; padding: 0;" title="suprimmé">
-													<i class="far fa-trash-alt" style="color: red;"></i> 
+													<i class="far fa-trash-alt"  style="color: red;"></i> 
 												 </button>
 											  </form>
+
 									</td>
 
 				
