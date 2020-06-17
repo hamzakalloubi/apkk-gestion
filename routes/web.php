@@ -21,12 +21,16 @@ use Illuminate\Support\Facades\Mail;
 /*Route::get('/', function () {
     return view('welcome');
 });*/
-
+Route::get('/user/{id}', 'UserController@profile')->name('user.profile');
+Route::get('/edit/user/', 'UserController@edit')->name('user.edit');
+Route::post('/edit/user/', 'UserController@update')->name('user.update');
 Route::get('/homeIn', function () {
     return view('homeIn');
 });
 
-
+Route::get('/passwordChange', function () {
+    return view('layouts/passwordChange');
+});
 Route::get('/register2', function () {
     return view('layouts/register2');
 });
@@ -129,3 +133,7 @@ Route::put('/remises/{remise}/{demande}/edit','RemiseController@update')->name('
 Route::delete('/remises/{remise}/{demande}/edit','RemiseController@destroy')->name('remises.destroy');
 
 });
+
+Route::get('/edit/password/user/', 'UserController@passwordEdit')->name('password.edit');
+Route::post('/edit/password/user/', 'UserController@passwordUpdate')->name('password.update');
+

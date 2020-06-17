@@ -62,7 +62,7 @@
                             <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
                             <label class="form-check-label" for="remember">
-                                {{ __('Remember Me') }}
+                                {{ __('Souviens de moi') }}
                             </label>
                         </div>
                     </div>
@@ -74,18 +74,18 @@
 
                  <!-- <input name="login" id="login" class="btn btn-block login-btn mb-4" type="button" value="Login">-->
                   <button type="submit" class="btn btn-block login-btn mb-4">
-                    {{ __('Login') }}
+                    {{ __('Connexion') }}
                 </button>
 
                 @if (Route::has('password.request'))
                     <a class="forgot-password-link" href="{{ route('password.request') }}">
-                        {{ __('Forgot Your Password?') }}
+                        {{ __('Mot de passe oublié?') }}
                     </a>
                 @endif
 
                 </form>
                 
-                <p class="login-card-footer-text">Don't have an account? <a href="{{ url('/register2')}}" class="text-reset">{{ __('Register') }}</a></p> 
+                <p class="login-card-footer-text">Vous n'avez pas de compte? <a href="{{ url('/register2')}}" class="text-reset">{{ __('Sinscrire') }}</a></p> 
                 
             </div>
           </div>

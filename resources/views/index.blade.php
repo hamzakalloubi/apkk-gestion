@@ -17,48 +17,32 @@
   
   </head>
   <body>
-
-		<div>
-    <nav class="navbar navbar-dark bg-dark navbar-expand-sm">
-  
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list-4" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbar-list-4">
-    <ul class="navbar-nav">
-        <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/fox.jpg" width="40" height="40" class="rounded-circle">
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Dashboard</a>
-          <a class="dropdown-item" href="#">Edit Profile</a>
-          <a class="dropdown-item" href="#">Log Out</a>
-        </div>
-      </li>   
-    </ul>
-  </div>
-</nav>
-    </div>
-
+   
 
 		<div class="wrapper d-flex align-items-stretch">
 			<nav id="sidebar">
-				<div class="custom-menu">
-					<button type="button" id="sidebarCollapse" class="btn btn-primary ">
-            
-	        </button>
-        </div>
+        
+        
 	  		<a href="{{ url('/homeIn')}}"><div class="img bg-wrap text-center py-4" style="background-image: url(/icons/log.jpg);" >
 	  			<div class="user-logo">
 	  				<div class="img" style="background-image: url(../images/icon/fp.jpg);"></div>
 	  				<h3></h3>
 	  			</div>
-	  		</div></a>
+        </div></a>
+        
         <ul class="list-unstyled components mb-5">
+          
+            
+           
+
+
+            <li>
+              <a href="{{ route('user.profile', Auth::user()->id) }}"><span class="far fa-user mr-3"></span>  {{ Auth::user()->name }} </a>
+            </li>
           @can('IsScolarité')
           <li class="active">
-            	
+        
+            
             <a href="{{ route('retraits.create') }}"><span class="fab fa-wpforms mr-3"></span> Formulaire retrait</a>
           </li>
          
@@ -95,6 +79,7 @@
         <!-- Page Content  -->
         
       <div id="content" class="p-4 p-md-5 pt-5" style="background-color: whitesmoke;">
+       
         @yield('content')  
       </div>
 		</div>

@@ -62,6 +62,20 @@
                                         {{ __('Logout') }}
                                     </a>
 
+
+                                    <a class="dropdown-item" href="{{ route('user.profile', Auth::user()->id) }}">
+                                        {{ __('View Profile') }}
+                                    </a>
+
+
+                                    <a class="dropdown-item" href="{{ route('user.edit')}}">
+                                        {{ __('Edit profile') }}
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('password.edit')}}">
+                                        {{ __('Edit password') }}
+                                    </a>
+
+
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>

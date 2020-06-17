@@ -90,7 +90,7 @@
 
                   
                   <button type="submit" class="btn btn-block login-btn mb-4" >
-                    {{ __('Register') }}</button>
+                    {{ __('Sinscrire') }}</button>
                 </form>
                
             </div>
