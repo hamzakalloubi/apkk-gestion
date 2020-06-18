@@ -17,15 +17,11 @@
  <!-- MAIN CONTENT-->
 
       <div  class="container-fluid" style="padding-top: 20px">
-
         @if(session()->has('success'))
       <div class="alert alert-success">
         {{session()->get('success')}}
       </div>
-
     @endif
-
-    
           <div  class="row justify-content-center">
               <div class="col-sm-8 ">
 
